@@ -1,0 +1,46 @@
+html,
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scrollbar-width: none;
+    background-color: whitesmoke;
+}
+
+.white-box {
+    position: absolute;
+    top: 2vh;
+    height: 90vh;
+    width: 90vh;
+    background-color: white;
+    border: 2vh solid black;
+}
+
+.black-box{
+    position: absolute;
+    height: 90vh;
+    width: 90vh;
+    background-color: black;
+    border: 2vh solid black;
+}
+
+.bottom-border{
+    position: absolute;
+    height: 4vh;
+    width: 90vh;
+    background-color: whitesmoke;
+
+}
+
+.corner-number{
+    height: fit-content;
+    width: fit-content;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 4vh;
+}
+
+.box-content{
+    height: max-content;
+    width: 100%;
+    text-align: center;
+    border: 1px solid red;
+}
