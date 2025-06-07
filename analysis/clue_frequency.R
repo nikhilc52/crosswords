@@ -8,6 +8,13 @@ setwd("~/GitHub/crosswords/analysis")
 
 data <- read_csv('../crossword_clues.csv')
 
+working <- data |> 
+  mutate(length = str_length(answer))|> 
+  group_by(length) |> 
+  summarize(
+    count = n()
+  )
+
 data <- data |> 
   mutate(date = as.Date(date, format = "%m-%d-%Y")) |> 
   mutate(year = format(date, "%Y"))

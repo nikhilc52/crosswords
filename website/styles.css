@@ -1,8 +1,12 @@
 html,
-body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     scrollbar-width: none;
-    background-color: whitesmoke;
+    background-color: rgb(200, 200, 200);
+}
+
+* {
+    /* border: 1px solid red; */
 }
 
 .white-box {
@@ -14,33 +18,70 @@ body{
     border: 2vh solid black;
 }
 
-.black-box{
+.black-box {
     position: absolute;
+    top: 2vh;
     height: 90vh;
     width: 90vh;
     background-color: black;
     border: 2vh solid black;
 }
 
-.bottom-border{
+.bottom-border {
     position: absolute;
     height: 4vh;
     width: 90vh;
-    background-color: whitesmoke;
-
+    background-color: rgb(200, 200, 200);
+    z-index: -1;
 }
 
-.corner-number{
+.corner-number {
     height: fit-content;
     width: fit-content;
     margin: 10px;
-    padding-left: 10px;
+    margin-left: 10px;
     font-size: 4vh;
 }
 
-.box-content{
+.title {
+    margin: 30px;
+    font-weight: 500;
+    text-indent: 3vh;
+    font-size: 5vh;
+}
+
+.box-content {
     height: max-content;
-    width: 100%;
-    text-align: center;
-    border: 1px solid red;
+    text-indent: 2vh;
+    margin: auto;
+    max-width: 70%;
+    line-height: 3vh;
+    font-size: 2vh;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.box-image-center {
+    display: flex;
+    justify-content: center;
+}
+
+.center-vertical-box {
+    align-content: center;
+    height: 65%;
+}
+
+.split-vertical-box {
+    min-height: fit-content;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: space-evenly;
+}
+
+img {
+    width: auto;
+    height: 40vh;
+    /* pointer-events: none; */
 }

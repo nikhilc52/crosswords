@@ -1,3 +1,5 @@
+// TODO: fix scrolling on initial load
+
 function closeTo(input, target, precision){
     if (Math.abs(target - input) <= precision){
         return true
@@ -12,7 +14,7 @@ function horizontalScrollOnly(e){
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
 }
 
-function verticalScrollOnly(e){
+function verticalScrollOnly(){
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'auto' //allow vertical scroll
 }
@@ -37,7 +39,7 @@ document.addEventListener('wheel', (event) => {
     }
     else if (closeTo(total_user_scroll_width, 0.7*total_width, 100)) {
         document.documentElement.scrollLeft += 0.7*total_width - total_user_scroll_width
-        verticalScrollOnly(event)
+        verticalScrollOnly()
         // console.log(total_user_scroll_width)
         // console.log(0.7 * total_width)
         // console.log('down')

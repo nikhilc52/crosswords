@@ -1,0 +1,17 @@
+Adobe After Effects v25.2 Windows 64 render log for project “unique_pie_chart.aep”
+
+Rendering started on 6/2/2025 at 12:09:55 AM
+
+  6/2/2025 12:09:55 AM: Starting composition “percent_unique_pie”.
+
+  Output To: C:\Users\nikhi\OneDrive\Documents\GitHub\crosswords\analysis\images\percent_unique_pie (0-00-01-03).psd    6/2/2025 12:09:56 AM: Finished composition “percent_unique_pie”.
+
+
+  6/2/2025 12:09:56 AM: Starting composition “percent_unique_pie”.
+
+  Output To: C:\Users\nikhi\OneDrive\Documents\GitHub\crosswords\analysis\images\percent_unique_pie (0-00-01-03)_1.png    6/2/2025 12:09:56 AM: Finished composition “percent_unique_pie”.
+
+
+  Total Time Elapsed: 1 Seconds
+Log closed on 6/2/2025 at 12:09:56 AM
+
