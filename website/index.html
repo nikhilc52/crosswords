@@ -12,7 +12,7 @@
     <div class="white-box">
         <div class="corner-number">1</div>
         <div class="title"><i>Title</i></div>
-        <div class="center-vertical-box">
+        <div class="center-vertical-box" style="height: 70%;">
             <div class="box-content">The New York Times crossword is a cultural icon. Initially born into the Times as a
                 means for Americans to escape the gloominess of an impeding war in 1942, the crossword has survived for
                 more
@@ -49,14 +49,13 @@
     </div>
     <div class="white-box" style="left: 184vh; top: 94vh;">
         <div class="corner-number">3</div>
-        <div class="title"><i>Visual Analysis</i></div>
+        <div class="title"><i>Grid Analysis</i></div>
 
         <div class="box-content">With over 11,365 puzzles in the dataset, there are bound to be repeating tile
             configurations. Below is the most common pattern, which has appeared 14 times over the last 30 years:</div>
 
         <div class="split-vertical-box" style="height: 50vh;">
-            <div><img loading="lazy" src="../analysis/images/most_frequent_representation_e.gif">
-            </div>
+            <img loading="lazy" src="../analysis/images/most_frequent_representation_e.gif">
             <div style="width: 25vh;">This pattern was most recently published on
                 December 1st, 2014, so despite it being the most frequent pattern, it's still fairly rare.</div>
         </div>
@@ -93,6 +92,69 @@
         <div class="box-content">Above is the same heatmap, smoothed over each year. Though there is some variance year
             to
             year, as a whole, the same pattern of rotational symmetry and white corners is visible throughout.</div>
+    </div>
+    <div class="black-box" style="left: 184vh; top:462vh"></div>
+    <div class="white-box" style="left: 276vh; top:462vh;">
+        <div class="corner-number">7</div>
+        <div class="title"><i>Answer Analysis</i></div>
+
+        <div class="box-content">There is plenty of insight to be gained from the text that actually fills the grid of
+            the puzzle, too. Being bound to the constraints of the English language, certain words appear more
+            frequently than others because of their flexibility.</div>
+
+        <div class="split-vertical-box" style="height: 50vh;">
+            <img loading="lazy" id="common-answers-bar" style="height: 45vh;"
+                src="../analysis/images/common_answers_e.gif">
+            <div style="width: 25vh;">Words like ERA, AREA, and ERE all contain very common letters, and their length
+                makes them extremely useful for puzzle-makers, who use them in the corners of the grid where longer
+                words can't be
+                placed. </div>
+        </div>
+    </div>
+    <div class="white-box" style="left: 368vh; top:462vh;">
+        <div class="corner-number">8</div>
+        <div class="box-content" style="padding-top:8vh;">Word structures that follow a "CVC" pattern, or a consonant,
+            followed by a vowel, followed by another consonant, are the most commonly used in puzzle answers. Below is a
+            table of the next 4 most frequent sound patterns:
+        </div>
+        <div class="box-image-center""><img loading=" lazy" src="../analysis/images/cv_table.gif"
+            style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">Again, it follows suit that these are short words with standard and frequent vowels.
+        </div>
+    </div>
+    <div class="white-box" style="left: 460vh; top:462vh;">
+        <div class="corner-number">9</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-content">There's some discrepancy in how often the most frequent answers appear in the
+                puzzle, based on the day. Generally, the puzzle gets progressively harder over the week, with Monday
+                being the easiest and Saturday being the hardest. Sunday, however, is an exception - it's based at a
+                Thursday level, but is a lot bigger: 21x21 instead of the standard 15x15.
+            </div>
+        </div>
+    </div>
+    <div class="black-box" style="left: 552vh; top:462vh;"></div>
+    <div class="white-box" style="left: 552vh; top:370vh;">
+        <div class="corner-number">10</div>
+        <div class="box-content" style="margin-top:14vh;">One way that the puzzle makers implement this difficulty is by
+            including more novel words, as seen below. On the more difficult days of the week, common words are
+            less likely to be seen, whereas early in the week, they're more abundant.
+        </div>
+        <div class="box-image-center""><img loading=" lazy" style="height: 25vh; margin-top: 4vh;"
+            id="common-answers-pie" src="../analysis/images/frequency_by_day.gif"
+            style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">Sunday puzzles are an exception to this pattern, since the large size of the grid means
+            more clues,
+            so common words are more likely to be reused.
+        </div>
+    </div>
+    <div class="white-box" style="left: 552vh; top:278vh;">
+        <div class="corner-number">11</div>
+        <div class="box-content" style="margin-top:8vh;">Another way of describing this phenomenon of repetition is by
+            looking at the type-token ratio, which describes the lexical diversity of the puzzles by dividing the number
+            of unique answers by the total number of answers.
+        </div>
+        <div class="box-image-center""><img loading=" lazy" id="common-answers-pie"
+            src="../analysis/images/ttr_year_e.gif" style="padding-top:2vh; padding-bottom: 2vh;"></div>
     </div>
 </body>
 

@@ -20,7 +20,9 @@ function elementIsFullyHiddenInViewport(el) {
 // playing a GIF once is done with photoshop settings
 element_dict = {
     "unique-pie-chart": ["percent_unique_pie_e.gif", "percent_unique_pie_e1.png", true],
-    "heatmap-animation": ["heatmap_animation_e.gif", "heatmap_animation_e1.png", true]
+    "heatmap-animation": ["heatmap_animation_e.gif", "heatmap_animation_e1.png", true],
+    "common-answers-bar": ["common_answers_e.gif", "answer_barplot_e.png", true],
+    "common-answers-pie": ["frequency_by_day.gif", "frequency_by_day.png", true]
 }
 
 document.addEventListener('wheel', (e) => {

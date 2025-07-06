@@ -68,10 +68,14 @@ body {
 
 .center-vertical-box {
     align-content: center;
-    height: 65%;
 }
 
 .split-vertical-box {
+    height: max-content;
+    text-indent: 2vh;
+    line-height: 3vh;
+    font-size: 2vh;
+
     min-height: fit-content;
     width: 90%;
     display: flex;
