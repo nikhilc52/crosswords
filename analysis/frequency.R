@@ -13,16 +13,29 @@ frequencies <- data |>
   summarize(
     count = n(),
     length = first(str_length(answer))
+  )
+
+frequencies_day <- data |> 
+  group_by(date) |> 
+  summarize(
+    day = first(day),
+    count_frequent_words = sum(answer %in% c('ERA','AREA','ERE','ONE','ELI','ORE','ATE','ALE','ETA','ARE'))
   ) |> 
-  mutate(freq_rank = rank(-count,ties.method="min")) |> 
-  arrange(-count)
+  mutate(contains_frequent_word = ifelse(count_frequent_words > 0, 1, 0)) |> 
+  group_by(day) |> 
+  summarize(
+    count_days = n(),
+    days_with_frequent_word = sum(contains_frequent_word)
+  ) |> 
+  mutate(percent_frequent = days_with_frequent_word/count_days)
 
 frequencies |> 
-  ggplot()+
-  geom_point(aes(x=freq_rank, y=count))+
-  scale_x_continuous(transform = "log10",labels = scales::label_comma(),n.breaks=10)+
-  scale_y_continuous(transform = "log10",labels = scales::label_comma(),n.breaks=10)
-
+  arrange(-count) |> 
+  head(10) |> 
+  ggplot(aes(x=reorder(answer, -count), y=count))+
+  theme_bw()+
+  ylim(0,800)+
+  geom_bar(stat="identity")
 
 index <- 1
 values <- vector("list", nrow(data))
@@ -48,6 +61,7 @@ cv_frequencies <- data |>
   summarize(
     count = n()
   ) |> 
-  arrange(-count)
+  arrange(-count) |> 
+  mutate(freq = count / nrow(data))
 
 
