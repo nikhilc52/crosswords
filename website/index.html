@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYT Crosswords</title>
+    <title>One Million Crossword Clues</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="white-box">
         <div class="corner-number">1</div>
-        <div class="title"><i>Title</i></div>
+        <div class="title"><i>One Million Crossword Clues</i></div>
         <div class="center-vertical-box" style="height: 70%;">
             <div class="box-content">The New York Times crossword is a cultural icon. Initially born into the Times as a
                 means for Americans to escape the gloominess of an impeding war in 1942, the crossword has survived for
@@ -104,7 +104,7 @@
 
         <div class="split-vertical-box" style="height: 50vh;">
             <img loading="lazy" id="common-answers-bar" style="height: 45vh;"
-                src="../analysis/images/common_answers_e.gif">
+                src="../analysis/images/answer_barplot_e.png">
             <div style="width: 25vh;">Words like ERA, AREA, and ERE all contain very common letters, and their length
                 makes them extremely useful for puzzle-makers, who use them in the corners of the grid where longer
                 words can't be
@@ -140,7 +140,7 @@
             less likely to be seen, whereas early in the week, they're more abundant.
         </div>
         <div class="box-image-center""><img loading=" lazy" style="height: 25vh; margin-top: 4vh;"
-            id="common-answers-pie" src="../analysis/images/frequency_by_day.gif"
+            id="common-answers-pie" src="../analysis/images/frequency_by_day.png"
             style="padding-top:2vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Sunday puzzles are an exception to this pattern, since the large size of the grid means
             more clues,
@@ -149,20 +149,59 @@
     </div>
     <div class="white-box" style="left: 552vh; top:278vh;">
         <div class="corner-number">11</div>
-        <div class="box-content" style="margin-top:8vh;">Another way of describing this phenomenon of repetition is by
+        <div class="box-content" style="margin-top:6vh;">Another way of describing this repetition pattern is by
             looking at the type-token ratio, which describes the lexical diversity of the puzzles by dividing the number
             of unique answers by the total number of answers.
         </div>
-        <div class="box-image-center""><img loading=" lazy" id="common-answers-pie"
-            src="../analysis/images/ttr_year_e.gif" style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-image-center""><img loading=" lazy" id="ttr-line" src="../analysis/images/ttr_year_e.gif"
+            style="height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content"">Notice that there isn't much variation within each day over the years, 
+            and that the advertised difficulty of each puzzle is indeed correlated with its type-token ratio measurement, 
+            except for Sunday, due to its aforementioned anomalous size.
+        </div>
     </div>
+
+    <div class=" white-box" style="left: 552vh; top:186vh;">
+            <div class="corner-number">12</div>
+            <div class="box-content" style="margin-top:6vh;">Aside from just using new words, puzzle creators also vary
+                the length of answers to achieve difficulty.
+            </div>
+            <div class="box-image-center""><img loading=" lazy" id="ttr-line"
+                src="../analysis/images/answer_length_table.gif" style="height: 45vh; padding-bottom: 2vh;"></div>
+            <div class="box-content"">Here, the difference in difficulty is clear: more difficult puzzles tend to
+                 have longer answers. That also means they are less likely to repeat short answers, 
+                 so length and lexical diversity go hand-in-hand.
+        </div>
+    </div>
+
+    <div class=" white-box" style="left: 552vh; top:94vh;">
+                <div class="corner-number">13</div>
+                <div class="center-vertical-box" style="height: 90%;">
+                    <div class="box-content">The answers are only one half of the crossword, though: the clues also
+                        play a vital role in difficulty and completion.
+                    </div>
+
+                    <div class="box-content">For instance, a common answer like "SSN" might be paired with a clue like
+                        "Nine-digit ID" on a Monday (36-Across, 7/24/2006) but a more difficult "Subj. of the Privacy
+                        Act of 1974" on a Saturday (8-Down, 10/29/2011).
+                    </div>
+
+                    <div class="box-content">As the clues vary across days and over the years, there's a lot of acumen
+                        to be gained from the crossword when analyzing
+                        its clues.
+                    </div>
+                </div>
+            </div>
+
+    <div class="black-box" style="left: 552vh; top:2vh;"></div>
 </body>
 
 <!-- <script>
     if (screen && screen.width > 500) {
-        document.write('<script type="text/javascript" src="scrolling.js"><\/script>');
-    }
-</script> -->
+        document.write('<script type=" text/javascript" src="scrolling.js">
+                <\ /script>');
+                    }
+                    </script> -->
 <script src="gifs.js"></script>
 
 </html>

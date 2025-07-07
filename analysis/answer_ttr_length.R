@@ -10,22 +10,11 @@ setwd("~/GitHub/crosswords/analysis")
 data <- read_csv('../crossword_clues.csv')
 
 working <- data |> 
-  mutate(length = str_length(answer))|> 
-  group_by(length) |> 
-  summarize(
-    count = n()
-  )
+  filter(answer == "SSN")
 
 data <- data |> 
   mutate(date = as.Date(date, format = "%m-%d-%Y")) |> 
   mutate(year = format(date, "%Y"))
-  
-frequencies <- data |> 
-  group_by(clue) |> 
-  summarize(
-    count = n(),
-    ex_answer = first(answer)
-  )
 
 ttr <- data |> 
   group_by(day, year) |>
@@ -39,19 +28,13 @@ colors <- data.frame(
 
 ttr <- left_join(ttr, colors, by=join_by('day'=='day'))
 
-animation <- 
-  
-ttr |> 
+animation <- ttr |> 
   filter(year != 1993) |> 
   filter(year != 2025) |> 
   ggplot()+
   geom_line(aes(x=year, y=ttr, group = day, color=hex), size=5)+
-  scale_color_identity()
-
-+
-  theme(panel.background = element_rect(fill="white", color="white"))
-
-+
+  scale_color_identity()+
+  theme(panel.background = element_rect(fill="white", color="white"))+
   transition_reveal(year)
 
 animation <- animate(animation, fps=30, duration=2, height=15, width=15, res=100, units="in")
@@ -66,14 +49,4 @@ length_per_day <- data |>
     count=n(),
     avg_len = mean(length)
   )
-
-clue_words <- unnest_tokens(data, clue_word, clue) |> 
-  group_by(clue_word) |> 
-  summarize(
-    count = n(),
-    most_common_answer = collapse::fmode(answer)
-  ) |> 
-  filter(!clue_word %in% stopwords::stopwords(language="en")) |> 
-  arrange(-count)
-
 
