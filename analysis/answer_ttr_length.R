@@ -18,7 +18,7 @@ data <- data |>
 
 ttr <- data |> 
   group_by(day, year) |>
-  summarise( ttr = n_distinct(answer)/ n()) |> 
+  summarise( ttr = n_distinct(answer)/ n(), count=n()) |> 
   mutate(year = as.numeric(year))
 
 colors <- data.frame(
