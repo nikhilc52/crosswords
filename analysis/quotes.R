@@ -16,17 +16,18 @@ data <- data |>
 quotes <- data |> 
   filter(str_ends(clue,'"')) |> 
   filter(str_starts(clue,'"')) |> 
-  filter(!str_detect(clue,'":'))
+  filter(!str_detect(clue,'":')) |> 
+  filter(!str_detect(clue, "_"))
 
-clue_frequency <- quotes |> 
+quotes_clue_frequency <- quotes |> 
   group_by(clue) |> 
   tally()
 
-answer_frequency <- quotes |> 
+quotes_answer_frequency <- quotes |> 
   group_by(answer) |> 
   tally()
 
-answer_frequency |> 
+quotes_answer_frequency |> 
   arrange(-n) |> 
   head(10) |> 
   ggplot(aes(x=reorder(answer, -n), y=n))+
@@ -34,19 +35,19 @@ answer_frequency |>
   ylim(0,250)+
   geom_bar(stat="identity")
 
-onomatopoeia <- data |> 
+brackets <- data |> 
   filter(str_starts(clue, "\\[")) |> 
   filter(str_ends(clue, "\\]"))
 
-onomatopoeia_clue_frequency <- onomatopoeia |> 
+brackets_clue_frequency <- brackets |> 
   group_by(clue) |> 
   tally()
 
-onomatopoeia_answer_frequency <- onomatopoeia |> 
+brackets_answer_frequency <- brackets |> 
   group_by(answer) |> 
   tally()
 
-onomatopoeia_answer_frequency |> 
+brackets_answer_frequency |> 
   arrange(-n) |> 
   head(10) |> 
   ggplot(aes(x=reorder(answer, -n), y=n))+
