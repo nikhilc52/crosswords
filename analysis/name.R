@@ -41,4 +41,4 @@ serena |>
 working <- data |> 
   filter(answer == 'SERENA')
 
-
+write_csv(working, 'serena.csv')
