@@ -14,7 +14,8 @@ data <- data |>
   mutate(year = format(date, "%Y"))
   
 working <- data |> 
-  filter(answer == 'SRI')
+  filter(clue == "Up")
+  #filter(answer == 'ALAI')
 
 clue_frequencies <- data |> 
   group_by(clue) |> 
