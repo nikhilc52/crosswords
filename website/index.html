@@ -77,7 +77,7 @@
         <div class="box-content">Below is a heatmap of the tile patterns of all 15x15 crosswords in the dataset. Though
             puzzle sizes vary over the week, there's 9,369 crosswords with these dimensions. The scale shows, for each
             tile, what percentage of crosswords had a black square in that location.</div>
-        <div class="box-image-center""><img loading=" lazy" src="../analysis/images/heatmap_e.gif"></div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/heatmap_e.gif"></div>
         <div class="box-content">Notice how all of the corners of the grid are left empty, since one or two letter
             answers are extremely rare. Instead, there are clear borders around those areas, making three and four
             letter words dominate those spaces. Nearly all puzzles have rotational symmetry, that helps explain the
@@ -86,10 +86,11 @@
     </div>
     <div class="white-box" style="left: 184vh; top: 370vh;">
         <div class="corner-number">6</div>
-        <div class="box-content" style="padding-top:8vh;">This pattern has not changed much over the years, either.
+        <div class="box-content" style="padding-top:6vh;">This pattern has not changed much over the years, either.
         </div>
-        <div class="box-image-center""><img loading=" lazy" id="heatmap-animation"
-            src="../analysis/images/heatmap_animation_e1.png" style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-image-center"><img loading=" lazy" id="heatmap-animation"
+                src="../analysis/images/heatmap_animation_e1.png"
+                style="padding-top:2vh; height: 45vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Above is the same heatmap, smoothed over each year. Though there is some variance year
             to
             year, as a whole, the same pattern of rotational symmetry and white corners is visible throughout.</div>
@@ -118,8 +119,8 @@
             followed by a vowel, followed by another consonant, are the most commonly used in puzzle answers. Below is a
             table of the next 4 most frequent sound patterns:
         </div>
-        <div class="box-image-center""><img loading=" lazy" src="../analysis/images/cv_table.gif"
-            style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/cv_table.gif"
+                style="padding-top:2vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Again, it follows suit that these are short words with standard and frequent vowels.
         </div>
     </div>
@@ -140,9 +141,9 @@
             including more novel words, as seen below. On the more difficult days of the week, common words are
             less likely to be seen, whereas early in the week, they're more abundant.
         </div>
-        <div class="box-image-center""><img loading=" lazy" style="height: 25vh; margin-top: 4vh;"
-            id="common-answers-pie" src="../analysis/images/frequency_by_day.png"
-            style="padding-top:2vh; padding-bottom: 2vh;"></div>
+        <div class="box-image-center"><img loading=" lazy" style="height: 25vh; margin-top: 4vh;"
+                id="common-answers-pie" src="../analysis/images/frequency_by_day.png"
+                style="padding-top:2vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Sunday puzzles are an exception to this pattern, since the large size of the grid means
             more clues,
             so common words are more likely to be reused.
@@ -154,55 +155,276 @@
             looking at the type-token ratio, which describes the lexical diversity of the puzzles by dividing the number
             of unique answers by the total number of answers.
         </div>
-        <div class="box-image-center""><img loading=" lazy" id="ttr-line" src="../analysis/images/ttr_year_e.gif"
-            style="height: 45vh; padding-bottom: 2vh;"></div>
-        <div class="box-content"">Notice that there isn't much variation within each day over the years, 
-            and that the advertised difficulty of each puzzle is indeed correlated with its type-token ratio measurement, 
+        <div class="box-image-center"><img loading=" lazy" id="ttr-line" src="../analysis/images/ttr_year_e.gif"
+                style="height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">Notice that there isn't much variation within each day over the years,
+            and that the advertised difficulty of each puzzle is indeed correlated with its type-token ratio
+            measurement,
             except for Sunday, due to its aforementioned anomalous size.
         </div>
     </div>
 
     <div class=" white-box" style="left: 552vh; top:186vh;">
-            <div class="corner-number">12</div>
-            <div class="box-content" style="margin-top:6vh;">Aside from just using new words, puzzle creators also vary
-                the length of answers to achieve difficulty.
-            </div>
-            <div class="box-image-center""><img loading=" lazy" id="ttr-line"
-                src="../analysis/images/answer_length_table.gif" style="height: 45vh; padding-bottom: 2vh;"></div>
-            <div class="box-content"">Here, the difference in difficulty is clear: more difficult puzzles tend to
-                 have longer answers. That also means they are less likely to repeat short answers, 
-                 so length and lexical diversity go hand-in-hand.
+        <div class="corner-number">12</div>
+        <div class="box-content" style="margin-top:6vh;">Aside from just using new words, puzzle creators also vary
+            the length of answers to achieve difficulty.
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/answer_length_table.gif"
+                style="height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">Here, the difference in difficulty is clear: more difficult puzzles tend to
+            have longer answers. That also means they are less likely to repeat short answers,
+            so length and lexical diversity go hand-in-hand.
         </div>
     </div>
 
     <div class=" white-box" style="left: 552vh; top:94vh;">
-                <div class="corner-number">13</div>
-                <div class="center-vertical-box" style="height: 90%;">
-                    <div class="box-content">The answers are only one half of the crossword, though: the clues also
-                        play a vital role in difficulty and completion.
-                    </div>
-
-                    <div class="box-content">For instance, a common answer like "SSN" might be paired with a clue like
-                        "Nine-digit ID" on a Monday (36-Across, 7/24/2006) but a more difficult "Subj. of the Privacy
-                        Act of 1974" on a Saturday (8-Down, 10/29/2011).
-                    </div>
-
-                    <div class="box-content">As the clues vary across days and over the years, there's a lot of acumen
-                        to be gained from the crossword when analyzing
-                        its clues.
-                    </div>
-                </div>
+        <div class="corner-number">13</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-content">The answers are only one half of the crossword, though: the clues also
+                play a vital role in difficulty and completion.
             </div>
 
+            <div class="box-content">For instance, a common answer like "SSN" might be paired with a clue like
+                "Nine-digit ID" on a Monday (36-Across, 7/24/2006) but a more difficult "Subj. of the Privacy
+                Act of 1974" on a Saturday (8-Down, 10/29/2011).
+            </div>
+
+            <div class="box-content">As the clues vary across days and over the years, there's a lot of acumen
+                to be gained from the crossword when analyzing
+                its clues.
+            </div>
+        </div>
+    </div>
+
     <div class="black-box" style="left: 552vh; top:2vh;"></div>
+    <div class="white-box" style="left: 644vh; top:2vh;">
+        <div class="corner-number">14</div>
+        <div class="title"><i>Clue Analysis</i></div>
+
+        <div class="box-content">Below is an ordered list of the most common clues in the crossword, paired to
+            some of their answers.</div>
+
+        <div class="split-vertical-box" style="height: 42vh;">
+
+            <div style="width: 25vh;">Notice that the most common clues are really just ways to access unique
+                but
+                common answers. From a writer's perspective, a word like "ALAI" is useful for its short
+                length and high concentration of vowels, but there's only so many ways to reference it. Using
+                the sport Jai alai is simply the easiest.</div>
+            <img loading="lazy" style="height: 42vh;" src="../analysis/images/clue_frequency_pair.png">
+        </div>
+
+        <div class="box-content">The same can be said for a clue like “Up”, which can be answered with “ATBAT”,
+            “ALOFT”, or “ASTIR”. The most common clue, though, is significantly different: it references a
+            specific grid location rather than being a descriptor of a word.</div>
+    </div>
+
+    <div class=" white-box" style="left: 736vh; top:2vh;">
+        <div class="corner-number">15</div>
+        <div class="box-content" style="margin-top:2vh;">To understand why 17-Across is so special, take four puzzles
+            that feature the clue.
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/17across.gif"
+                style="height: 50vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">In each of these grids, 17-Across is the first lengthy clue. These longer spaces are
+            often used by puzzle makers to create a theme or shared clue, which connects over other, longer clues.
+            However, the later clues do not need to repeat the same phrasing as the first, so they default to “See
+            17-Across”.
+        </div>
+    </div>
+
+    <div class=" white-box" style="left: 828vh; top:2vh;">
+        <div class="corner-number">16</div>
+        <div class="box-content" style="margin-top:4vh;">This phenomena is best understood with an example. The top
+            right crossword in the previous diagram has 17-Across read “With 36- and 59-Across, words of Alexander
+            Pope”. Then, 36- and 59-Across, rather than repeat the same clue, both say “See 17-Across”.
+            The answers to these three clues are filled in below:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/feb_27_1996_crossword.gif"
+                style="height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">When completed, they reveal a quote stretched across all three answers: “Fools rush in
+            where angels fear to tread”.
+        </div>
+    </div>
+
+    <div class=" white-box" style="left: 920vh; top:2vh;">
+        <div class="corner-number">17</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-content">Intricacies like this is what makes both completing and analyzing the
+                crossword so fulfilling.
+            </div>
+        </div>
+    </div>
+
+    <div class="black-box" style="left: 1012vh; top:2vh;"></div>
+
+    <div class=" white-box" style="left: 1012vh; top:94vh;">
+        <div class="corner-number">18</div>
+        <div class="box-content" style="margin-top:8vh;">Honing down to just the most common clue-answer pairs
+            yields a
+            slightly different result.
+        </div>
+        <div class="split-vertical-box" style="height: 50vh; padding-top: 2vh;">
+
+            <img loading="lazy" style="height: 50vh;" src="../analysis/images/clue_answer_pair_table.gif">
+            <div style="width: 25vh;">The insight still remains the same as before: common answers like “SRI” and
+                “UMA” can only be reached certain ways, which leads to repeated clues for those words.</div>
+
+        </div>
+    </div>
+
+    <div class=" white-box" style="left: 1012vh; top:186vh;">
+        <div class="corner-number">19</div>
+        <div class="box-content" style="margin-top:4vh;">Interestingly, there's been a clear trend in how the Times
+            chooses their clues: over the years, the average length of clues, in terms of the total number of characters
+            (including spaces), has consistently increased, with little variation across different days:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/clue_length_e.gif"
+                style="height: 40vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">It's unclear whether this corresponds with a particular change in difficulty. On one
+            hand, longer clues increase context for an answer, but on the other, they can also increase complexity.
+            Regardless, it's fascinating to see such a clear trend across time, when previous analysis showed
+            consistency. </div>
+    </div>
+
+    <div class=" black-box" style="left: 1012vh; top:278vh;"> </div>
+
+    <div class=" white-box" style="left: 1104vh; top:278vh;">
+        <div class="corner-number">20</div>
+        <div class="box-content" style="margin-top:4vh;">The Times crossword employs a lot of conventions in their
+            clues. One of them is that a clue enclosed in quotes (“”). According to the Times, a clue written in
+            this manner is “something someone might say out loud” and its answer is “a synonym for that
+            verbalization”.
+
+            For instance, a clue like "Heaven forbid!"
+            has an answer “GODNO”.
+
+            The most common verbalizations are listed below:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/quote_answer_frequency_e.gif"
+                style="transform: rotate(90deg); height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">Knowing the common answers to such clues can aid solving: 72.4% of puzzles contain at
+            least one of these “quote” clues.</div>
+    </div>
+
+    <div class=" white-box" style="left: 1196vh; top:278vh;">
+        <div class="corner-number">21</div>
+        <div class="box-content" style="margin-top:6vh;">Another convention of the crossword are clues that start
+            and end with a square bracket ([]). For these, the clues suggest answers that are non-verbal: a clue
+            like “[Get the joke?]” has an answer “WINK”.
+
+            Again, below are the most common answers:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/brackets_answer_frequency_e.gif"
+                style="transform: rotate(90deg); height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">While these clues appear in only 5% puzzles, whenever they do appear, it will be easy
+            to draw upon the above word bank to solve. </div>
+    </div>
+
+    <div class=" white-box" style="left: 1288vh; top:278vh;">
+        <div class="corner-number">22</div>
+        <div class="box-content" style="margin-top:2vh;">There are also less “formal” quirks found within the
+            crossword clues, mainly revolving around their wording. Below is a table of the most frequently used
+            first words (including special characters) in crossword clues. A sample clue of each type is listed
+            in gray:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/first_words.gif"
+                style="height: 45vh; padding-bottom: 2vh;"></div>
+        <div class="box-content">To the untrained solver, these clues can seem purposefully confusing. However,
+            they are really just ways for writers to reach certain types of words: adjectives are paired with
+            clues that begin with “Like” (“Like much of Sudan” : “ARID”) and clues that start with “Kind” are
+            answered with prefixes (“Kind of bean” : “SOY”), for instance.</div>
+    </div>
+
+    <div class=" white-box" style="left: 1380vh; top:278vh;">
+        <div class="corner-number">23</div>
+        <div class="box-content" style="margin-top:2vh;">The same can be done for the last word in a clue:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/last_words.gif"
+                style="height: 50vh;"></div>
+        <div class="box-content">Endings like “e.g.” and “for one” require examples as answers (“Wonder Woman, for
+            one” : “HEROINE”) and the endings “Abbr.” and “for short” are paired with abbreviated phrases (“Las
+            Vegas's home: Abbr.” : “NEV”).</div>
+        <div class="box-content">Other endings like “say”, “maybe”, and “in a way” can vary in their use cases, but
+            typically involve a non-straightforward answer (“No credit, say” : “CASHONLY”)</div>
+    </div>
+
+    <div class=" white-box" style="left: 1472vh; top:278vh;">
+        <div class="corner-number">24</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-content">Once more, understanding these common puzzle quirks can help you become a better
+                solver and appreciate the puzzle's construction.
+            </div>
+        </div>
+    </div>
+
+    <div class=" black-box" style="left: 1564vh; top:278vh;"> </div>
+
+    <div class=" white-box" style="left: 1564vh; top:370vh;">
+        <div class="corner-number">25</div>
+        <div class="box-content" style="margin-top:2vh;">Though it might seem like the crossword follows a certain
+            formula, there is still plenty of room for growth. For instance, the references that the Times makes in
+            their clues have significantly varied over time:
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/adele_e.gif" style="height: 40vh;">
+        </div>
+        <div class="box-content">Take the above answer, “ADELE”, and the person that the corresponding clue references.
+            Before Adele (the singer) became a household name, the answer was still used in the crossword for its
+            relatively short length and high vowel count, with references to other (lesser known) Adeles. But after
+            Adele (the singer) began releasing albums, the crossword clues immediately pivoted to utilizing her likeness
+            as a sole reference.</div>
+    </div>
+
+    <div class=" white-box" style="left: 1564vh; top:462vh;">
+        <div class="corner-number">26</div>
+        <div class="box-content" style="margin-top:8vh;">Even still, answers also have a potential for variance over
+            time.
+        </div>
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/serena.gif"
+                style="height: 35vh; padding: 2vh;">
+        </div>
+        <div class="box-content">While not as common of an answer as “ADELE”, likely for its slightly longer length and
+            lower vowel density, “SERENA” has appeared 39 times after Serena Williams (the tennis player) won the U.S.
+            Open in 1999. More importantly, “SERENA” hadn't appeared once in the six years prior to her stepping onto
+            the global stage: it was solely her likeness that the propelled the consistent use of the answer in the
+            crossword.</div>
+    </div>
+
+    <div class=" white-box" style="left: 1564vh; top:554vh;">
+        <div class="corner-number">27</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-content">These answers in particular showcase the power of the crossword as an ever evolving
+                representation of current culture. It's nice to see people, places, and things you know get featured in
+                these puzzles.
+            </div>
+            <div class="box-content">And while you might not necessarily be as famous as Adele or Serena Williams, you
+                too can discover
+                yourself amidst the clues.</div>
+        </div>
+    </div>
+
+    <div class=" white-box" style="left: 1564vh; top:646vh;">
+        <div class="corner-number">28</div>
+        <div class="center-vertical-box" style="height: 90%;">
+            <div class="box-image-center"><img loading=" lazy" src="../illustrator/credits_crossword.png"
+                    style="height: 55vh;">
+            </div>
+
+            <div class="box-content">Scripts that were used for this article can be found on GitHub, in
+                addition to information about how this project was created.</div>
+            <div class="box-content">All content written, coded, and arranged by Nikhil Chinchalkar.</div>
+
+        </div>
+    </div>
+    </div>
 </body>
 
 <!-- <script>
     if (screen && screen.width > 500) {
         document.write('<script type=" text/javascript" src="scrolling.js">
-                <\ /script>');
-                    }
-                    </script> -->
+                        <\ /script>');
+                            }
+                            </script> -->
 <script src="gifs.js"></script>
 
 </html>

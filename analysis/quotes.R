@@ -27,6 +27,8 @@ quotes_answer_frequency <- quotes |>
   group_by(answer) |> 
   tally()
 
+n_distinct(quotes$date)/n_distinct(data$date)
+
 quotes_answer_frequency |> 
   arrange(-n) |> 
   head(10) |> 
