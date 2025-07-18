@@ -38,13 +38,13 @@ body {
 .corner-number {
     height: fit-content;
     width: fit-content;
-    margin: 10px;
-    margin-left: 10px;
+    margin: 1vh;
+    margin-left: 1vh;
     font-size: 4vh;
 }
 
 .title {
-    margin: 30px;
+    margin: 3vh;
     font-weight: 500;
     text-indent: 3vh;
     font-size: 5vh;
@@ -57,8 +57,8 @@ body {
     max-width: 70%;
     line-height: 3vh;
     font-size: 2vh;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
 }
 
 .box-image-center {

@@ -50,3 +50,21 @@ length_per_day <- data |>
     avg_len = mean(length)
   )
 
+unique_words <- data |>
+  group_by(day) |> 
+  mutate(count_clues = n()) |> 
+  group_by(answer) |> 
+  summarize(
+    count = n(),
+    year = first(year),
+    day = first(day),
+    count_clues = first(count_clues)
+  ) |> 
+  filter(count == 1) |> 
+  group_by(day) |> 
+  summarize(
+    count_unique_clues = n(),
+    count_clues = first(count_clues),
+    percent_unique = count_unique_clues/count_clues
+  )
+
