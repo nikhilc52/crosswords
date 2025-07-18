@@ -18,7 +18,7 @@ function elementIsFullyHiddenInViewport(el) {
 // dictionary of image ID's as keys, values are [gif filename, still image filename, 
 // boolean value to see if the image is currently showing a still image]
 // playing a GIF once is done with photoshop settings
-element_dict = {
+const element_dict = {
     "unique-pie-chart": ["percent_unique_pie_e.gif", "percent_unique_pie_e1.png", true],
     "heatmap-animation": ["heatmap_animation_e.gif", "heatmap_animation_e1.png", true],
     "common-answers-bar": ["common_answers_e.gif", "answer_barplot_e.png", true],
@@ -27,7 +27,7 @@ element_dict = {
 }
 
 document.addEventListener('wheel', (e) => {
-    for (var key of Object.keys(element_dict)) {
+    for (const key of Object.keys(element_dict)) {
         const elem = document.getElementById(key);
         // if the element is visible and it is showing a still image
         if (elementIsVisibleInViewport(elem) && element_dict[key][2]) {
