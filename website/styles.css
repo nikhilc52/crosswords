@@ -98,7 +98,7 @@ img {
     transition: background-size 1.5s ease-in-out;
 }
 
-.highlight-animation{
+.highlight-animation {
     background-size: 100% auto;
 }
 
@@ -110,16 +110,27 @@ img {
     text-decoration-skip-ink: none;
 }
 
-sup{
+sup {
     vertical-align: top;
     position: relative;
     top: -0.5vh;
+    color: #275B85;
 }
 
-.tooltip{
+sup::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 200%;
+    height: 200%;
+    /* border: 1px solid red; */
+}
+
+.tooltip {
     position: absolute;
     visibility: hidden;
-    font-size: 1.2vh; 
+    font-size: 1.2vh;
     min-width: 10vh;
     width: 20vh;
     height: auto;
@@ -129,25 +140,24 @@ sup{
     background-color: white;
     border-radius: 2vh;
     border: #FFDA00 solid 0.3vh;
-    
+
     opacity: 100%;
     transition: opacity 0.5s ease-in-out;
 }
 
-.fade-opacity{
+.fade-opacity {
     opacity: 0%;
 }
 
-ol{
+ol {
     padding-left: 3vh;
 }
 
 li {
-   padding-left: 2vh;
+    padding-left: 2vh;
 }
 
-
-.link{
+.link {
     color: black;
     text-decoration: underline;
     /* text-decoration-style: double; */
