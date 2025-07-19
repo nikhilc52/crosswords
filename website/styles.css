@@ -89,3 +89,69 @@ img {
     height: 40vh;
     /* pointer-events: none; */
 }
+
+.underline {
+    background-image: url(../illustrator/highlight.svg);
+    background-size: 0% auto;
+    background-repeat: no-repeat;
+
+    transition: background-size 1.5s ease-in-out;
+}
+
+.highlight-animation{
+    background-size: 100% auto;
+}
+
+.title-underline {
+    text-decoration: underline;
+    text-decoration-color: rgb(133, 200, 255, 0.5);
+    text-decoration-thickness: 2.2vh;
+    text-underline-offset: -1.1vh;
+    text-decoration-skip-ink: none;
+}
+
+sup{
+    vertical-align: top;
+    position: relative;
+    top: -0.5vh;
+}
+
+.tooltip{
+    position: absolute;
+    visibility: hidden;
+    font-size: 1.2vh; 
+    min-width: 10vh;
+    width: 20vh;
+    height: auto;
+    padding: 1vh;
+    padding-left: 2vh;
+    z-index: 1;
+    background-color: white;
+    border-radius: 2vh;
+    border: #FFDA00 solid 0.3vh;
+    
+    opacity: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-opacity{
+    opacity: 0%;
+}
+
+ol{
+    padding-left: 3vh;
+}
+
+li {
+   padding-left: 2vh;
+}
+
+
+.link{
+    color: black;
+    text-decoration: underline;
+    /* text-decoration-style: double; */
+    text-decoration-color: #85C8FF;
+    text-decoration-thickness: 0.3vh;
+    text-decoration-skip-ink: all;
+}

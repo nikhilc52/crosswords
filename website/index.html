@@ -12,20 +12,22 @@
 <body>
     <div class="white-box">
         <div class="corner-number">1</div>
-        <div class="title"><i>One Million Crossword Clues</i></div>
+        <div class="title"><i class="title-underline">One Million Crossword Clues</i></div>
         <div class="center-vertical-box" style="height: 70%;">
             <div class="box-content"><i>The New York Times</i> crossword is a cultural icon. Initially born into the
                 <i>Times</i> as a
                 means for Americans to escape the gloominess of an impending war in 1942, the crossword has survived for
-                more
-                than 83 years, and developed a strong following over time.
+                more than 83 years, and developed a strong following over time.
             </div>
-            <div class="box-content">Like learning most things, a large part of solving the crossword is about pattern
-                recognition: understanding a crossword theme or filling in missing letters in a familiar word. Patterns
+            <div class="box-content">Like learning most things, <span class="underline" id="1">a large part of solving
+                    the crossword is about pattern
+                    recognition</span>: understanding a crossword theme or filling in missing letters in a familiar
+                word. Patterns
                 are also found within crossword construction: both in the grid configuration as well as common clue
                 and
-                answer pairs. Analyzing that system can help you better understand the crossword and make you a better
-                solver.
+                answer pairs. Analyzing that system can help you better understand the crossword and <span
+                    class="underline" id="2">make you a better
+                    solver.</span>
             </div>
         </div>
     </div>
@@ -35,7 +37,8 @@
 
         <div class="box-content">The data for this analysis comes from Nov. 21, 1993 to Jan. 1, 2025, totaling
             11,365
-            puzzles and 949,106 clues, from XWordInfo.com, which contains puzzle information for every <i>Times</i>
+            puzzles and 949,106 clues, from <a href="https://www.xwordinfo.com/" target="_blank"
+                class="link">XWordInfo.com</a>, which contains puzzle information for every <i>Times</i>
             crossword
             ever published.</div>
         <div class="box-image-center"><img loading="lazy" src="../analysis/images/crosswords_e.gif"></div>
@@ -53,7 +56,28 @@
         <div class="title"><i>Grid Analysis</i></div>
 
         <div class="box-content">With over 11,365 puzzles in the dataset, there are bound to be repeating tile
-            configurations. Below is the most common pattern, which appears 14 times over the last 30 years:</div>
+            configurations. Below is the most common pattern, which appears 14 times<sup id="appearances">i</sup> over
+            the last 30 years:
+        </div>
+
+        <div class="tooltip" id="appearances-desc" style="left: 30vh; top: 25vh;">The appearances are the following:
+            <ol>
+                <li>6/27/1994</li>
+                <li>7/12/1995</li>
+                <li>3/19/1996</li>
+                <li>12/30/1996</li>
+                <li>1/27/1997</li>
+                <li>5/6/1997</li>
+                <li>3/16/1998</li>
+                <li>7/18/2000</li>
+                <li>10/30/2000</li>
+                <li>2/4/2002</li>
+                <li>7/12/2004</li>
+                <li>1/17/2005</li>
+                <li>3/30/2006</li>
+                <li>12/1/2014</li>
+            </ol>
+        </div>
 
         <div class="split-vertical-box" style="height: 50vh;">
             <img loading="lazy" src="../analysis/images/most_frequent_representation_e.gif">
@@ -215,7 +239,7 @@
                 common answers. From a writer's perspective, a word like ALAI is useful for its short
                 length and high concentration of vowels, but there are only so many ways to reference it. Using
                 the sport of jai alai is simply the easiest.</div>
-            <img loading="lazy" style="height: 42vh;" src="../analysis/images/clue_frequency_pair.png">
+            <img loading="lazy" style="height: 42vh;" id="clue-pair" src="../analysis/images/clue_frequency_pair.png">
         </div>
 
         <div class="box-content">The same can be said for a clue like "Up", which can be answered with ATBAT,
@@ -285,7 +309,7 @@
             chooses their clues: over the years, the average length of clues, in terms of the total number of characters
             (including spaces), has consistently increased, with little variation across different days:
         </div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/clue_length_e.gif"
+        <div class="box-image-center"><img loading=" lazy" id="clue-length" src="../analysis/images/clue_length_e.png"
                 style="height: 40vh; padding-bottom: 2vh;"></div>
         <div class="box-content">It's unclear whether this corresponds with a particular change in difficulty. On one
             hand, longer clues increase context for an answer, but on the other, they can also increase complexity.
@@ -309,7 +333,8 @@
         <div class="box-content" style="margin-top:0vh;">For instance, a clue like "I goofed"
             has the answer MYBAD. The most common verbalizations are listed below:
         </div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/quote_answer_frequency_e.gif"
+        <div class="box-image-center"><img loading="lazy" id="quote-answer"
+                src="../analysis/images/quote_answer_frequency_e.png"
                 style="transform: rotate(90deg); height: 45vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Knowing the common answers to such clues can aid in solving: 72.4% of puzzles contain
             at
@@ -324,7 +349,8 @@
 
             Again, below are the most common answers:
         </div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/brackets_answer_frequency_e.gif"
+        <div class="box-image-center"><img loading="lazy" id="bracket-answer"
+                src="../analysis/images/brackets_answer_frequency_e.png"
                 style="transform: rotate(90deg); height: 45vh; padding-bottom: 2vh;"></div>
         <div class="box-content">While these types of clues appear in only 5% puzzles, whenever they do appear, it will
             be easy
@@ -378,9 +404,11 @@
             formula, there is still plenty of room for growth. For instance, the references that the Times makes in
             their clues have significantly varied over time:
         </div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/adele_e.gif" style="height: 45vh;">
+        <div class="box-image-center"><img loading=" lazy" id="adele" src="../analysis/images/adele_e.gif"
+                style="height: 45vh;">
         </div>
-        <div class="box-content">Take the above chart, which shows the person referenced by clues that had the answer ADELE.
+        <div class="box-content">Take the above chart, which shows the person referenced by clues that had the answer
+            ADELE.
             Before Adele (the singer) became a household name, the answer was still used in the crossword for its
             relatively short length and high vowel count, with references to other (lesser-known) Adeles. But after
             Adele began releasing albums, the crossword clues immediately pivoted to utilizing her identity
@@ -392,7 +420,7 @@
         <div class="box-content" style="margin-top:8vh;">Even still, answers also have the potential for variance over
             time.
         </div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/serena_e1.png"
+        <div class="box-image-center"><img loading=" lazy" id="serena" src="../analysis/images/serena_e1.png"
                 style="height: 38vh; padding: 2vh;">
         </div>
         <div class="box-content">While not as common an answer as ADELE, likely for its slightly longer length and
@@ -438,5 +466,7 @@
                             }
                             </script> -->
 <script src="gifs.js"></script>
+<script src="highlights.js"></script>
+<script src="toolips.js"></script>
 
 </html>

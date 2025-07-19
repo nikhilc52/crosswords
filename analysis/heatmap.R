@@ -21,6 +21,10 @@ most_frequent_puzzle <- data |>
   arrange(-count) |> 
   head(1)
 
+#appearances of most frequent representation
+appearances <- data |> 
+  filter(representation == 'wwwwwbwwwwwbwwwwwwwwbwwwwwbwwwwwwwwwwwwwwbwwwbbbbwwwwbbwwwwwwwwwwwwbwwwwwwwwwwwwwbwwwwwwbbwwwwwbwwwwwbwwwwwwwbwwwwwbwwwwwwwbwwwwwbwwwwwbbwwwwwwbwwwwwwwwwwwwwbwwwwwwwwwwwwbbwwwwbbbbwwwbwwwwwwwwwwwwwwbwwwwwbwwwwwwwwbwwwwwbwwwww')
+
 #copied code from below, fitted to above
 heatmap <- data.frame()
 values <- vector("list", 225)
