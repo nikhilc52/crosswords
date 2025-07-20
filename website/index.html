@@ -19,15 +19,15 @@
                 means for Americans to escape the gloominess of an impending war in 1942, the crossword has survived for
                 more than 83 years, and developed a strong following over time.
             </div>
-            <div class="box-content">Like learning most things, <span class="underline" id="1">a large part of solving
+            <div class="box-content">Like learning most things, <span class="highlight">a large part of solving
                     the crossword is about pattern
                     recognition</span>: understanding a crossword theme or filling in missing letters in a familiar
                 word. Patterns
                 are also found within crossword construction: both in the grid configuration as well as common clue
                 and
                 answer pairs. Analyzing that system can help you better understand the crossword and <span
-                    class="underline" id="2">make you a better
-                    solver.</span>
+                    class="highlight">make you a better
+                    solver</span>.
             </div>
         </div>
     </div>
@@ -36,11 +36,11 @@
         <div class="title"><i>About the Data</i></div>
 
         <div class="box-content">The data for this analysis comes from Nov. 21, 1993 to Jan. 1, 2025, totaling
-            11,365
-            puzzles and 949,106 clues, from <a href="https://www.xwordinfo.com/" target="_blank"
-                class="link">XWordInfo.com</a>, which contains puzzle information for every <i>Times</i>
+            <span class="highlight">11,365 puzzles and 949,106 clues</span>, from <a href="https://www.xwordinfo.com/"
+                target="_blank" class="link">XWordInfo.com</a>, which contains puzzle information for every <i>Times</i>
             crossword
-            ever published.</div>
+            ever published.
+        </div>
         <div class="box-image-center"><img loading="lazy" src="../analysis/images/crosswords_e.gif"></div>
         <div class="box-content">While the data from 1942 to 1992 is certainly useful, the date restrictions here
             are so
@@ -90,7 +90,8 @@
 
     <div class="white-box" style="left: 184vh; top: 186vh;">
         <div class="corner-number">4</div>
-        <div class="box-content" style="padding-top:8vh;">In fact, nearly all of the puzzle tile patterns are unique:
+        <div class="box-content" style="padding-top:8vh;">In fact, <span class="highlight">nearly all of the puzzle tile
+                patterns are unique:</span>
         </div>
         <div class="box-image-center" style="padding-top: 2vh; padding-bottom: 2vh;"><img id="unique-pie-chart"
                 loading="lazy" src="../analysis/images/percent_unique_pie_e1.png"></div>
@@ -101,28 +102,45 @@
     <div class="bottom-border" style="left: 276vh; top: 278vh;"></div>
     <div class="white-box" style="left: 184vh; top: 278vh;">
         <div class="corner-number">5</div>
-        <div class="box-content">Below is a heatmap of the tile patterns of all 15x15 crosswords in the dataset. Though
+        <div class="box-content" style="margin-top: -1vh">Below is a heatmap of the tile patterns of all 15x15
+            crosswords in the dataset. Though
             puzzle sizes vary over the week, there are 9,369 crosswords with these dimensions. The scale shows, for each
             tile, what percentage of crosswords have a black square in that location.</div>
-        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/heatmap_e.gif" style="height: 42vh;">
+        <div class="box-image-center"><img loading=" lazy" src="../analysis/images/heatmap_e.gif"
+                style="height: 42vh; margin-top: -2vh;">
         </div>
         <div class="box-content">Notice how all of the corners of the grid are left empty, since one or two-letter
-            answers are extremely rare. Instead, there are clear borders around those areas, making three and
-            four-letter words dominate those spaces. Nearly all puzzles have rotational symmetry, which helps explain
+            answers are extremely rare<sup id="two-letter">ii</sup>. Instead, there are clear borders around those
+            areas, making three and
+            four-letter words dominate those spaces. </div>
+        <div class="box-content">Nearly all puzzles have <span class="highlight">rotational symmetry</span>, which helps
+            explain
             the
             pattern of white spaces in the middle, since placing a black square there would mean a one-letter answer
             would need to be in the center of the grid.</div>
+        <div class="tooltip" id="two-letter-desc">Only 26 two-letter answers were featured in the crossword, which are
+            special cases that almost always contribute to the puzzle's theme.<br><br>There's been a singular instance
+            of a one-letter
+            answer: "___-Square" : T, which was featured on Jan. 9, 2014.
+        </div>
     </div>
+
+
     <div class="white-box" style="left: 184vh; top: 370vh;">
         <div class="corner-number">6</div>
-        <div class="box-content" style="padding-top:6vh;">This pattern does not change much over the years, either.
+        <div class="box-content" style="padding-top:6vh;">This pattern doesn't change much over the years, either.
         </div>
         <div class="box-image-center"><img loading=" lazy" id="heatmap-animation"
                 src="../analysis/images/heatmap_animation_e1.png"
                 style="padding-top:1vh; height: 45vh; padding-bottom: 2vh;"></div>
         <div class="box-content">Above is the same heatmap, smoothed over each year. Though there is some variance year
             to
-            year, as a whole, the same pattern of rotational symmetry and white corners is visible throughout.</div>
+            year, as a whole, the same pattern of rotational symmetry and white corners is visible throughout<sup
+                id="heatmap-years">iii</sup>.</div>
+
+        <div class="tooltip" id="heatmap-years-desc">1993 and 2025 are excluded from the above chart since they do
+            not contain a full year of data. This applies to other year-based charts as well.
+        </div>
     </div>
     <div class="black-box" style="left: 184vh; top:462vh"></div>
     <div class="white-box" style="left: 276vh; top:462vh;">
@@ -136,7 +154,8 @@
         <div class="split-vertical-box" style="height: 50vh;">
             <img loading="lazy" id="common-answers-bar" style="height: 45vh;"
                 src="../analysis/images/answer_barplot_e.png">
-            <div style="width: 25vh;">Words like ERA, AREA, and ERE all contain common letters, and their length
+            <div style="width: 25vh;">Words like <span class="highlight">ERA, AREA, and ERE</span> all contain common
+                letters, and their length
                 makes them extremely useful for puzzle-makers, who employ them in the corners of the grid where longer
                 words can't be
                 placed. </div>
@@ -144,7 +163,8 @@
     </div>
     <div class="white-box" style="left: 368vh; top:462vh;">
         <div class="corner-number">8</div>
-        <div class="box-content" style="padding-top:8vh;">Word structures that follow a "CVC" pattern, or a consonant,
+        <div class="box-content" style="padding-top:8vh;">Word structures that follow a <span
+                class="highlight">"CVC"</span> pattern, or a consonant,
             followed by a vowel, followed by another consonant, are the most commonly used in puzzle answers. Below is a
             table of the next 4 most frequent sound patterns:
         </div>
@@ -157,8 +177,10 @@
         <div class="corner-number">9</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">There's some discrepancy in how often the most frequent answers appear in the
-                puzzle, based on the day. Generally, the puzzle gets progressively harder over the week, with Monday
-                being the easiest and Saturday being the hardest. Sunday, however, is an exception - it's based at a
+                puzzle, based on the day. Generally, the puzzle gets progressively harder over the week, with <span
+                    class="highlight">Monday
+                    being the easiest and Saturday being the hardest</span>. Sunday, however, is an exception - it's
+                based at a
                 Thursday level, but is a lot bigger: 21x21 instead of the standard 15x15.
             </div>
         </div>
@@ -167,7 +189,8 @@
     <div class="white-box" style="left: 552vh; top:370vh;">
         <div class="corner-number">10</div>
         <div class="box-content" style="margin-top:14vh;">One way puzzle makers implement this difficulty is by
-            including more novel words, as seen below. On the more difficult days of the week, common words are
+            <span class="highlight">including more novel words</span>, as seen below. On the more difficult days of the
+            week, common words are
             less likely to be seen, whereas early in the week, they're more abundant.
         </div>
         <div class="box-image-center"><img loading=" lazy" style="height: 25vh; margin-top: 4vh;"
@@ -181,40 +204,50 @@
     <div class="white-box" style="left: 552vh; top:278vh;">
         <div class="corner-number">11</div>
         <div class="box-content" style="margin-top:6vh;">Another way of describing this pattern is by
-            looking at the type-token ratio, which describes the lexical diversity of the puzzles by dividing the number
+            looking at the <span class="highlight">type-token ratio</span>, which describes the lexical diversity of the
+            puzzles by dividing the number
             of unique answers by the total number of answers.
         </div>
         <div class="box-image-center"><img loading=" lazy" id="ttr-line" src="../analysis/images/ttr_year_e.gif"
                 style="height: 45vh; padding-bottom: 2vh;"></div>
         <div class="box-content">The advertised difficultly is indeed correlated with lexical diversity: in a given
             year, over 90% of answers are unique between each Saturday variant of the puzzle, compared
-            to only 80% with Mondays.
+            to only 80% with Mondays.<sup id="ttr">iv</sup>
 
         </div>
-        <!-- <div class="box-content">Also, while not shown above, the same is true when grouping years and days together. In a
+
+        <div class="tooltip" id="ttr-desc">Also, while not shown above, the same is true when grouping years and days
+            together. In a
             Saturday puzzle, you can expect
-            8.8% of answers to be new to the <i>Times</i>, but only 3.7% on a Monday version.
-        </div> -->
+            8.8% of answers to be new to the <i>Times</i> (never used in any crossword), but only 3.7% on a Monday
+            version.
+        </div>
     </div>
 
     <div class=" white-box" style="left: 552vh; top:186vh;">
         <div class="corner-number">12</div>
         <div class="box-content" style="margin-top:6vh;">Aside from just using new words, puzzle creators also vary
-            the length of answers (including spaces) to achieve difficulty.
+            the length of answers<sup id="answer-length">v</sup> to achieve difficulty.
         </div>
         <div class="box-image-center"><img loading=" lazy" src="../analysis/images/answer_length_table.gif"
                 style="height: 45vh; padding-bottom: 2vh;"></div>
-        <div class="box-content">Here, the difference in difficulty is clear: more difficult puzzles tend to
-            have longer answers. That also means they are less likely to repeat short answers,
+        <div class="box-content">Here, the difference in difficulty is clear: <span class="highlight">more difficult
+                puzzles tend to
+                have longer answers</span>. That also means they are less likely to repeat short answers,
             so length and lexical diversity go hand-in-hand.
+        </div>
+
+        <div class="tooltip" id="answer-length-desc">The length is the number of characters, including
+            spaces and special characters like punctuation.
         </div>
     </div>
 
     <div class=" white-box" style="left: 552vh; top:94vh;">
         <div class="corner-number">13</div>
         <div class="center-vertical-box" style="height: 90%;">
-            <div class="box-content">The answers are only one half of the crossword, though: the clues also
-                play a vital role in difficulty and completion.
+            <div class="box-content">The answers are only one half of the crossword, though: <span class="highlight">the
+                    clues also
+                    play a vital role in difficulty and completion</span>.
             </div>
 
             <div class="box-content">For instance, the common answer "SSN" might be paired with a clue like
@@ -246,8 +279,9 @@
         </div>
 
         <div class="box-content">The same can be said for a clue like "Up", which can be answered with ATBAT,
-            ALOFT, or ASTIR. The most common clue, though, is significantly different: it references a
-            specific grid location rather than being a descriptor of a word.</div>
+            ALOFT, or ASTIR. The most common clue, though, is significantly different: <span class="highlight">it
+                references a
+                specific grid location rather than being a descriptor of a word</span>.</div>
     </div>
 
     <div class=" white-box" style="left: 736vh; top:2vh;">
@@ -257,10 +291,15 @@
         </div>
         <div class="box-image-center"><img loading=" lazy" src="../analysis/images/17across.gif"
                 style="height: 50vh; padding-bottom: 2vh;"></div>
-        <div class="box-content">In each of these grids, 17-Across is the first lengthy answer. These longer spaces are
+        <div class="box-content">In each of these grids, 17-Across is <span class="highlight">the first lengthy
+                answer</span>. These longer spaces are
             often used by puzzle makers to create a theme or shared answer, which connects over other, longer answers.
             However, the later clues do not need to repeat the same phrasing as the first, so they default to "See
-            17-Across".
+            17-Across".<sup id="17-across">v</sup>
+        </div>
+
+        <div class="tooltip" id="17-across-desc">Other clues the exhibit the same pattern are "See 1-Across" (74
+            appearances) and "See 20-Across" (50 appearances).
         </div>
     </div>
 
@@ -274,8 +313,9 @@
         </div>
         <div class="box-image-center"><img loading=" lazy" src="../analysis/images/feb_27_1996_crossword.gif"
                 style="height: 45vh; padding-bottom: 2vh;"></div>
-        <div class="box-content">When complete, they reveal a quote stretched across all three answers: "Fools rush in
-            where angels fear to tread".
+        <div class="box-content">When complete, they reveal a quote stretched across all three answers: <span
+                class="highlight">"Fools rush in
+                where angels fear to tread."</span>
         </div>
     </div>
 
@@ -300,7 +340,8 @@
 
             <img loading="lazy" style="height: 50vh;" src="../analysis/images/clue_answer_pair_table.gif">
             <div style="width: 25vh;">The insight remains the same: common answers like SRI and
-                UMA can only be reached in certain ways, which leads to repeated clues for those words.</div>
+                UMA <span class="highlight">can only be reached in certain ways</span>, which leads to repeated clues
+                for those words.</div>
 
         </div>
     </div>
@@ -309,14 +350,20 @@
         <div class="corner-number">19</div>
         <div class="box-content" style="margin-top:6vh;">Interestingly, there's been a clear trend in how the
             <i>Times</i>
-            chooses their clues: over the years, the average length of clues, in terms of the total number of characters
-            (including spaces), has consistently increased, with little variation across different days:
+            chooses their clues: over the years, the average length of clues, in terms of the total number of
+            characters<sup id="clue-length">vi</sup>, has <span class="highlight">consistently increased</span>, with
+            little variation across
+            different days:
         </div>
         <div class="box-image-center"><img loading=" lazy" id="clue-length" src="../analysis/images/clue_length_e.png"
                 style="height: 40vh; padding-bottom: 2vh;"></div>
         <div class="box-content">It's unclear whether this corresponds with a particular change in difficulty. On one
             hand, longer clues increase context for an answer, but on the other, they can also increase complexity.
-            Regardless, it's fascinating to see such a clear trend across time. </div>
+            Regardless, it's fascinating to see <span class="highlight">such a clear trend across time</span>. </div>
+
+        <div class="tooltip" id="clue-length-desc">The length is the number of characters, including
+            spaces and special characters like punctuation.
+        </div>
     </div>
 
     <div class=" black-box" style="left: 1012vh; top:278vh;"> </div>
@@ -325,7 +372,9 @@
         <div class="corner-number">20</div>
         <div class="box-content" style="margin-top:2vh;">The <i>Times</i> crossword employs a lot of conventions in
             their
-            clues. One of them pertains to clues enclosed in quotes ("..."). According to the <i>Times</i>, a clue
+            clues. One of them pertains to clues enclosed in quotes ("..."). <a
+                href="https://www.nytimes.com/article/how-to-solve-a-crossword-puzzle.html" target="_blank"
+                class="link">According to the <i>Times</i></a>, a clue
             written in
             this manner is "something someone might say out loud" and its answer is "a synonym for that
             verbalization".

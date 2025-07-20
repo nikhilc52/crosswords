@@ -90,7 +90,7 @@ img {
     /* pointer-events: none; */
 }
 
-.underline {
+.highlight {
     background-image: url(../illustrator/highlight.svg);
     background-size: 0% auto;
     background-repeat: no-repeat;

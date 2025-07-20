@@ -147,5 +147,3 @@ animation <- heatmap |>
 animate(animation, fps=2, duration=20, width = 7.5, height = 7.5,
         units = "in", res = 200)
 
-
-

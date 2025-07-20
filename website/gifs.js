@@ -34,7 +34,7 @@ const element_dict = {
 
 document.addEventListener('wheel', (e) => {
     for (const key of Object.keys(element_dict)) {
-        const elem = document.getElementById(key);
+        const elem  = document.getElementById(key);
         // if the element is visible and it is showing a still image
         if (elementIsVisibleInViewport(elem) && element_dict[key][2]) {
             // show the GIF, and change the bool to indicate the change

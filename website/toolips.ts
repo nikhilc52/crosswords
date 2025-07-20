@@ -1,5 +1,5 @@
 // list of tool tip points
-const lst = ["appearances"]
+const lst = ["appearances", "two-letter", "heatmap-years","ttr","answer-length","17-across","clue-length"]
 
 // for each of the tooltips, add the reveal function on mouseover and hide on mouse out
 for (let i = 0; i < lst.length; i++) {
@@ -19,7 +19,7 @@ function reveal(name: string, e : MouseEvent) {
     // get the icon that the tooltip is based on and the description
     const icon = document.getElementById(name);
     const desc = document.getElementById(name + "-desc");
-    
+
     // offset left is the number of pixels from the edges of the square
     // the subtraction is how far on the client viewport the mouse is vs the icon itself
     // the calculation offsets the description from the icon by that amount

@@ -1,23 +1,19 @@
-// dictionary of image ID's as keys, values are booleans to see if the highlight is displayed
-const highlight_dict = {
-    "1": false,
-    "2": false
-}
+// map of highlight elements as keys, values are booleans to see if the highlight is displayed
+const highlight_list = new Map(Array.from(document.getElementsByClassName('highlight')).map(value => [value, false]))
 
 document.addEventListener('wheel', (e) => {
-    for (const key of Object.keys(highlight_dict)) {
-        const elem = document.getElementById(key);
+    for (const key of highlight_list.keys()) {
         // if the element is visible and it is not 
-        if (elementIsVisibleInViewport(elem) && !(highlight_dict[key])) {
+        if (elementIsVisibleInViewport(key) && !(highlight_list.get(key))) {
             // show the highlight, and change the bool to indicate the change
-            elem.classList.add('highlight-animation')
-            highlight_dict[key] = true
+            key.classList.add('highlight-animation')
+            highlight_list.set(key, true)
         }
         // if it is fully hidden
-        else if (elementIsFullyHiddenInViewport(elem)) {
+        else if (elementIsFullyHiddenInViewport(key)) {
             // change to hidden, indicate the change
-            elem.classList.remove('highlight-animation')
-            highlight_dict[key] = false
+            key.classList.remove('highlight-animation')
+            highlight_list.set(key, false)
         }
     }
 });

@@ -12,6 +12,10 @@ data <- read_csv('../crossword_clues.csv')
 working <- data |> 
   filter(answer == "SSN")
 
+short <- data |> 
+  mutate(length = str_length(answer)) |> 
+  filter(length < 3)
+
 data <- data |> 
   mutate(date = as.Date(date, format = "%m-%d-%Y")) |> 
   mutate(year = format(date, "%Y"))
