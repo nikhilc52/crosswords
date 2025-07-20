@@ -87,7 +87,7 @@ body {
 img {
     width: auto;
     height: 40vh;
-    /* pointer-events: none; */
+    pointer-events: none;
 }
 
 .highlight {
@@ -164,4 +164,8 @@ li {
     text-decoration-color: #85C8FF;
     text-decoration-thickness: 0.3vh;
     text-decoration-skip-ink: all;
+}
+
+a {
+    text-decoration: none;
 }

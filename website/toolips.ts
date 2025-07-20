@@ -1,11 +1,12 @@
 // list of tool tip points
-const lst = ["appearances", "two-letter", "heatmap-years","ttr","answer-length","17-across","clue-length"]
+const lst = ["appearances", "two-letter", "heatmap-years", "ttr", "ttr-image","answer-length", 
+    "17-across", "clue-length", "endings", "adeles", "serenas", "pudding", "credits"]
 
 // for each of the tooltips, add the reveal function on mouseover and hide on mouse out
 for (let i = 0; i < lst.length; i++) {
     const elem = document.getElementById(lst[i]);
     elem!.addEventListener('mousemove', function (e) { reveal(lst[i], e) });
-    
+
     // initially fade out
     const desc = document.getElementById(lst[i] + "-desc");
     desc!.classList.toggle('fade-opacity');
@@ -15,7 +16,7 @@ for (let i = 0; i < lst.length; i++) {
     elem!.addEventListener('mouseover', function (e) { opacity_animation(lst[i]) });
 }
 
-function reveal(name: string, e : MouseEvent) {
+function reveal(name: string, e: MouseEvent) {
     // get the icon that the tooltip is based on and the description
     const icon = document.getElementById(name);
     const desc = document.getElementById(name + "-desc");

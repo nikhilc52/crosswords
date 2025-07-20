@@ -1,5 +1,6 @@
 // list of tool tip points
-var lst = ["appearances", "two-letter", "heatmap-years", "ttr", "answer-length", "17-across", "clue-length"];
+var lst = ["appearances", "two-letter", "heatmap-years", "ttr", "ttr-image", "answer-length",
+    "17-across", "clue-length", "endings", "adeles", "serenas", "pudding", "credits"];
 var _loop_1 = function (i) {
     var elem = document.getElementById(lst[i]);
     elem.addEventListener('mousemove', function (e) { reveal(lst[i], e); });

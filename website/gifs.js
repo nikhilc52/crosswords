@@ -25,7 +25,7 @@ const element_dict = {
     "common-answers-pie": ["frequency_by_day.gif", "frequency_by_day.png", true],
     "ttr-line": ["ttr_year_e.gif", "ttr_year.png", true],
     "clue-pair": ["clue_frequency_pair.gif", "clue_frequency_pair.png", true],
-    "clue-length": ["clue_length_e.gif", "clue_length_e.png", true],
+    "clue-length-img": ["clue_length_e.gif", "clue_length_e.png", true],
     "bracket-answer": ["brackets_answer_frequency_e.gif", "brackets_answer_frequency_e.png", true],
     "quote-answer": ["quote_answer_frequency_e.gif", "quote_answer_frequency_e.png", true],
     "adele": ["adele_e.gif", "adele_e2.png", true],
