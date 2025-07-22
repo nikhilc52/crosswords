@@ -115,6 +115,8 @@ sup {
     position: relative;
     top: -0.5vh;
     color: #275B85;
+    z-index: 3;
+    font-size: 1.5vh;
 }
 
 sup::before {
@@ -125,6 +127,7 @@ sup::before {
     width: 200%;
     height: 200%;
     /* border: 1px solid red; */
+    z-index: 3;
 }
 
 .tooltip {
@@ -136,7 +139,7 @@ sup::before {
     height: auto;
     padding: 1vh;
     padding-left: 2vh;
-    z-index: 1;
+    z-index: 2;
     background-color: white;
     border-radius: 2vh;
     border: #FFDA00 solid 0.3vh;
@@ -177,4 +180,29 @@ a {
     width: 2vh;
     height: 2vh;
     z-index: -1;
+}
+
+.minimap {
+    z-index: 3;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
+
+    img {
+        opacity: 100%;
+        height: 15vh;
+    }
+}
+
+.minimap-annotation {
+    z-index: 1;
+    position: fixed;
+    bottom: -3.5vh;
+    right: 1vh;
+
+    img {
+        opacity: 70%;
+        height: 33vh;
+        width: 40vh;
+    }
 }

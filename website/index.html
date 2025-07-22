@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Million Crossword Clues</title>
     <link rel="icon" type="image/png" href="../illustrator/logo.png">
+
+    <script src="gifs.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="white-box">
+    <div class="white-box" id="1.0">
         <div class="corner-number">1</div>
         <div class="title"><i>One Million Crossword Clues</i></div>
         <div class="center-vertical-box" style="height: 70%;">
@@ -34,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="white-box" style="left: 92vh;">
+    <div class="white-box" style="left: 92vh;" id="2.0">
         <div class="corner-number">2</div>
         <div class="title"><i>About the Data</i></div>
 
@@ -52,10 +54,8 @@
             the
             stylistic choices of Shortz's puzzles more apparent in the data. </div>
     </div>
-    <div class="black-box" style="left: 184vh;">
-
-    </div>
-    <div class="white-box" style="left: 184vh; top: 94vh;">
+    <div class="black-box" style="left: 184vh;" id="3.0"></div>
+    <div class="white-box" style="left: 184vh; top: 94vh;" id="4.0">
         <div class="corner-number">3</div>
         <div class="title"><i>Grid Analysis</i></div>
 
@@ -92,7 +92,7 @@
 
 
 
-    <div class="white-box" style="left: 184vh; top: 186vh;">
+    <div class="white-box" style="left: 184vh; top: 186vh;" id="5.0">
         <div class="corner-number">4</div>
         <div class="box-content" style="padding-top:8vh;">In fact, <span class="highlight">nearly all of the puzzle tile
                 patterns are unique:</span>
@@ -103,7 +103,7 @@
             observing the placement of the white and black squares.</div>
 
     </div>
-    <div class="white-box" style="left: 184vh; top: 278vh;">
+    <div class="white-box" style="left: 184vh; top: 278vh;" id="6.0">
         <div class="corner-number">5</div>
         <div class="box-content" style="margin-top: -1vh">Below is a heatmap of the tile patterns of all 15x15
             crosswords in the dataset. Though
@@ -129,7 +129,7 @@
     </div>
 
 
-    <div class="white-box" style="left: 184vh; top: 370vh;">
+    <div class="white-box" style="left: 184vh; top: 370vh;" id="7.0">
         <div class="corner-number">6</div>
         <div class="box-content" style="padding-top:6vh;">This pattern doesn't change much over the years, either.
         </div>
@@ -145,8 +145,8 @@
             not contain a full year of data. This applies to other year-based charts as well.
         </div>
     </div>
-    <div class="black-box" style="left: 184vh; top:462vh"></div>
-    <div class="white-box" style="left: 276vh; top:462vh;">
+    <div class="black-box" style="left: 184vh; top:462vh" id="8.0"></div>
+    <div class="white-box" style="left: 276vh; top:462vh;" id="9.0">
         <div class="corner-number">7</div>
         <div class="title"><i>Answer Analysis</i></div>
 
@@ -164,7 +164,7 @@
                 placed. </div>
         </div>
     </div>
-    <div class="white-box" style="left: 368vh; top:462vh;">
+    <div class="white-box" style="left: 368vh; top:462vh;" id="10.0">
         <div class="corner-number">8</div>
         <div class="box-content" style="padding-top:8vh;">Word structures that follow a <span
                 class="highlight">"CVC"</span> pattern, or a consonant,
@@ -176,7 +176,7 @@
         <div class="box-content">Again, it follows that these are short words with standard and frequent vowels.
         </div>
     </div>
-    <div class="white-box" style="left: 460vh; top:462vh;">
+    <div class="white-box" style="left: 460vh; top:462vh;" id="11.0">
         <div class="corner-number">9</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">There's some discrepancy in how often the most frequent answers appear in the
@@ -190,8 +190,8 @@
             </div>
         </div>
     </div>
-    <div class="black-box" style="left: 552vh; top:462vh;"></div>
-    <div class="white-box" style="left: 552vh; top:370vh;">
+    <div class="black-box" style="left: 552vh; top:462vh;" id="12.0"></div>
+    <div class="white-box" style="left: 552vh; top:370vh;" id="13.0">
         <div class="corner-number">10</div>
         <div class="box-content" style="margin-top:14vh;">One way puzzle makers implement this difficulty is by
             <span class="highlight">including more novel words</span>, as seen below. On the more difficult days of the
@@ -206,7 +206,7 @@
             so common words are more likely to be reused.
         </div>
     </div>
-    <div class="white-box" style="left: 552vh; top:278vh;">
+    <div class="white-box" style="left: 552vh; top:278vh;" id="14.0">
         <div class="corner-number">11</div>
         <div class="box-content" style="margin-top:6vh;">Another way of describing this pattern is by
             looking at the <span class="highlight">type-token ratio</span>, which describes the lexical diversity of the
@@ -234,7 +234,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 552vh; top:186vh;">
+    <div class="white-box" style="left: 552vh; top:186vh;" id="15.0">
         <div class="corner-number">12</div>
         <div class="box-content" style="margin-top:6vh;">Aside from just using new words, puzzle creators also vary
             the length of answers<sup id="answer-length">vi</sup> to achieve difficulty.
@@ -252,7 +252,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 552vh; top:94vh;">
+    <div class="white-box" style="left: 552vh; top:94vh;" id="16.0">
         <div class="corner-number">13</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">The answers are only one half of the crossword, though: <span class="highlight">the
@@ -270,8 +270,8 @@
         </div>
     </div>
 
-    <div class="black-box" style="left: 552vh; top:2vh;"></div>
-    <div class="white-box" style="left: 644vh; top:2vh;">
+    <div class="black-box" style="left: 552vh; top:2vh;" id="17.0"></div>
+    <div class="white-box" style="left: 644vh; top:2vh;" id="18.0">
         <div class="corner-number">14</div>
         <div class="title"><i>Clue Analysis</i></div>
 
@@ -295,7 +295,7 @@
                 specific grid location rather than being a descriptor of a word</span>.</div>
     </div>
 
-    <div class=" white-box" style="left: 736vh; top:2vh;">
+    <div class="white-box" style="left: 736vh; top:2vh;" id="19.0">
         <div class="corner-number">15</div>
         <div class="box-content" style="margin-top:2vh;">To understand why 17-Across is so special, take four puzzles
             that feature the clue.
@@ -314,7 +314,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 828vh; top:2vh;">
+    <div class="white-box" style="left: 828vh; top:2vh;" id="20.0">
         <div class="corner-number">16</div>
         <div class="box-content" style="margin-top:4vh;">This phenomenon is best understood with an example. The
             17-Across clue in the top right crossword of the previous diagram reads: "With 36- and 59-Across,
@@ -330,7 +330,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 920vh; top:2vh;">
+    <div class="white-box" style="left: 920vh; top:2vh;" id="21.0">
         <div class="corner-number">17</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">Intricacies like this are what make both completing and analyzing crosswords so
@@ -339,9 +339,9 @@
         </div>
     </div>
 
-    <div class="black-box" style="left: 1012vh; top:2vh;"></div>
+    <div class="black-box" style="left: 1012vh; top:2vh;" id="22.0"></div>
 
-    <div class=" white-box" style="left: 1012vh; top:94vh;">
+    <div class="white-box" style="left: 1012vh; top:94vh;" id="23.0">
         <div class="corner-number">18</div>
         <div class="box-content" style="margin-top:8vh;">Honing down to just the most common clue-answer pairs
             yields a
@@ -357,7 +357,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 1012vh; top:186vh;">
+    <div class="white-box" style="left: 1012vh; top:186vh;" id="24.0">
         <div class="corner-number">19</div>
         <div class="box-content" style="margin-top:6vh;">Interestingly, there's been a clear trend in how the
             <i>Times</i>
@@ -377,9 +377,9 @@
         </div>
     </div>
 
-    <div class=" black-box" style="left: 1012vh; top:278vh;"> </div>
+    <div class="black-box" style="left: 1012vh; top:278vh;" id="25.0"> </div>
 
-    <div class=" white-box" style="left: 1104vh; top:278vh;">
+    <div class="white-box" style="left: 1104vh; top:278vh;" id="26.0">
         <div class="corner-number">20</div>
         <div class="box-content" style="margin-top:2vh;">The <i>Times</i> crossword employs a lot of conventions in
             their
@@ -404,7 +404,7 @@
                 least one of these "quote" clues</span>.</div>
     </div>
 
-    <div class=" white-box" style="left: 1196vh; top:278vh;">
+    <div class="white-box" style="left: 1196vh; top:278vh;" id="27.0">
         <div class="corner-number">21</div>
         <div class="box-content" style="margin-top:6vh;">Another convention of the crossword is clues that start
             and end with a square bracket ([...]). For these, the clues suggest answers that are <span
@@ -421,7 +421,7 @@
             to draw upon the above word bank to solve. </div>
     </div>
 
-    <div class=" white-box" style="left: 1288vh; top:278vh;">
+    <div class="white-box" style="left: 1288vh; top:278vh;" id="28.0">
         <div class="corner-number">22</div>
         <div class="box-content" style="margin-top:2vh;">There are also less "formal" quirks found within
             crossword clues, mainly revolving around their wording. Below is a table of the most frequently used
@@ -437,7 +437,7 @@
             answered with prefixes ("Kind of bean": SOY), for instance.</div>
     </div>
 
-    <div class=" white-box" style="left: 1380vh; top:278vh;">
+    <div class="white-box" style="left: 1380vh; top:278vh;" id="29.0">
         <div class="corner-number">23</div>
         <div class="box-content" style="margin-top:2vh; margin-bottom: 0vh;">The same can be done for the last word in a
             clue:
@@ -458,7 +458,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 1472vh; top:278vh;">
+    <div class="white-box" style="left: 1472vh; top:278vh;" id="30.0">
         <div class="corner-number">24</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">Once more, understanding these common puzzle quirks can help you <span
@@ -469,9 +469,9 @@
         </div>
     </div>
 
-    <div class=" black-box" style="left: 1564vh; top:278vh;"> </div>
+    <div class="black-box" style="left: 1564vh; top:278vh;" id="31.0"> </div>
 
-    <div class=" white-box" style="left: 1564vh; top:370vh;">
+    <div class="white-box" style="left: 1564vh; top:370vh;" id="32.0">
         <div class="corner-number">25</div>
         <div class="box-content" style="margin-top:2vh;">Though it might seem like the crossword follows a certain
             formula, there is still <span class="highlight">plenty of room for growth</span>. For instance, the
@@ -496,7 +496,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 1564vh; top:462vh;">
+    <div class="white-box" style="left: 1564vh; top:462vh;" id="33.0">
         <div class="corner-number">26</div>
         <div class="box-content" style="margin-top:8vh;">Even still, answers also have the potential for variance over
             time.
@@ -518,7 +518,7 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 1564vh; top:554vh;">
+    <div class="white-box" style="left: 1564vh; top:554vh;" id="34.0">
         <div class="corner-number">27</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-content">These answers in particular showcase the power of the crossword as an <span
@@ -543,12 +543,12 @@
         </div>
     </div>
 
-    <div class=" white-box" style="left: 1564vh; top:646vh;">
+    <div class="white-box" style="left: 1564vh; top:646vh;" id="35.0">
         <div class="corner-number">28</div>
         <div class="center-vertical-box" style="height: 90%;">
             <div class="box-image-center"><img loading=" lazy" src="../illustrator/credits_crossword.svg"
                     style="height: 55vh;">
-                <div style="height: 0px;"><sup id="credits" style="top: 53vh;">xiii</sup></div>
+                <div style="height: 0vh;"><sup id="credits" style="top: 53vh;">xiii</sup></div>
             </div>
 
             <div class="box-content">Scripts that were used for this article can be found on <a class="link"
@@ -562,9 +562,16 @@
         </div>
     </div>
 
+    <div class="minimap-annotation">
+        <img src="../illustrator/minimap-annotation.svg">
+    </div>
+    <div class="minimap">
+        <img id="minimap-image" src="../illustrator/minimap/1.svg">
+    </div>
+
     <!-- placeholder box for spacing -->
-    <div class="black-box" style="background-color: rgb(200, 200, 200); left: 1658vh; top:740vh; height: 2vh; 
-    border: none;"></div>
+    <div style="background-color: rgb(200, 200, 200); position: absolute; left: 1658vh; top:740vh; height: 2vh; width: 100vw; 
+    border: none;" id="spacing"></div>
 
     <!-- temp object for scrolling aid -->
     <div id="0" class="scroll" style="top: 0vh; left:  25vh;"></div>
@@ -576,9 +583,9 @@
     <div id="6" class="scroll" style="top: 365vh; left: 280vh;"></div>
     <div id="7" class="scroll" style="top: 458vh; left: 280vh;"></div>
     <div id="8" class="scroll" style="top: 500vh; left: 180vh;"></div>
-    <div id="9" class="scroll" style="top: 552vh; left: 332vh; background-color: white;"></div>
-    <div id="10" class="scroll" style="top: 552vh; left: 434vh; background-color: white;"></div>
-    <div id="11" class="scroll" style="top: 552vh; left: 495vh; background-color: white;"></div>
+    <div id="9" class="scroll" style="top: 550vh; left: 332vh;"></div>
+    <div id="10" class="scroll" style="top: 550vh; left: 434vh;"></div>
+    <div id="11" class="scroll" style="top: 550vh; left: 495vh;"></div>
     <div id="12" class="scroll" style="top: 552vh; left: 647vh;"></div>
     <div id="13" class="scroll" style="top: 500vh; left: 647vh;"></div>
     <div id="14" class="scroll" style="top: 420vh; left: 647vh;"></div>
@@ -587,10 +594,10 @@
     <div id="17" class="scroll" style="top: 180vh; left: 647vh;"></div>
     <div id="18" class="scroll" style="top: 99vh; left: 547vh;"></div>
     <div id="19" class="scroll" style="top: 25vh; left: 547vh;"></div>
-    <div id="20" class="scroll" style="top: 5vh; left: 697vh; background-color: white;"></div>
-    <div id="21" class="scroll" style="top: 90vh; left: 777vh; background-color: white;"></div>
-    <div id="22" class="scroll" style="top: 90vh; left: 880vh; background-color: white;"></div>
-    <div id="23" class="scroll" style="top: 10vh; left: 950vh; background-color: white;"></div>
+    <div id="20" class="scroll" style="top: 2vh; left: 697vh; background-color: white;"></div>
+    <div id="21" class="scroll" style="top: 2vh; left: 777vh; background-color: white;"></div>
+    <div id="22" class="scroll" style="top: 2vh; left: 880vh; background-color: white;"></div>
+    <div id="23" class="scroll" style="top: 2vh; left: 950vh; background-color: white; "></div>
     <div id="24" class="scroll" style="top: 50vh; left: 1110vh;"></div>
     <div id="25" class="scroll" style="top: 99vh; left: 1110vh;"></div>
     <div id="26" class="scroll" style="top: 170vh; left: 1110vh;"></div>
@@ -600,8 +607,8 @@
     <div id="30" class="scroll" style="top: 360vh; left: 1160vh; background-color: white;"></div>
     <div id="31" class="scroll" style="top: 360vh; left: 1260vh; background-color: white;"></div>
     <div id="32" class="scroll" style="top: 330vh; left: 1360vh; background-color: white;"></div>
-    <div id="33" class="scroll" style="top: 330vh; left: 1460vh; background-color: white;"></div>
-    <div id="34" class="scroll" style="top: 280vh; left: 1500vh; background-color: white;"></div>
+    <div id="33" class="scroll" style="top: 330vh; left: 1460vh; background-color: white"></div>
+    <div id="34" class="scroll" style="top: 278vh; left: 1500vh; background-color: white;"></div>
     <div id="35" class="scroll" style="top: 278vh; left: 1660vh;"></div>
     <div id="36" class="scroll" style="top: 375vh; left: 1660vh;"></div>
     <div id="37" class="scroll" style="top: 455vh; left: 1660vh;"></div>
@@ -610,15 +617,10 @@
     <div id="40" class="scroll" style="top: 700vh; left: 1660vh;"></div>
 </body>
 
-<script>
-    if (screen && screen.width > 800) {
-        console.log('here')
-        document.write('<script type=" text/javascript" src="scrolling.js"><\ /script>');
-    }
-</script>
-<script src="gifs.js"></script>
-<script src="highlights.js"></script>
 <script src="toolips.js"></script>
 <script src="scrolling.js"></script>
+<script src="highlights.js"></script>
+<script src="vertical.js"></script>
+<script src="minimap.js"></script>
 
 </html>

@@ -32,7 +32,7 @@ const element_dict = {
     "serena": ["serena.gif", "serena_e1.png", true]
 }
 
-document.addEventListener('wheel', (e) => {
+function check_gifs() {
     for (const key of Object.keys(element_dict)) {
         const elem  = document.getElementById(key);
         // if the element is visible and it is showing a still image
@@ -48,4 +48,8 @@ document.addEventListener('wheel', (e) => {
             element_dict[key][2] = true
         }
     }
+}
+
+document.addEventListener('wheel', (event) => {
+    check_gifs()
 });
