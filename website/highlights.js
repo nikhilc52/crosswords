@@ -19,5 +19,6 @@ function check_highlights() {
 }
 
 document.addEventListener('wheel', (e) => {
+    console.log('highlights checked')
     check_highlights()
 });

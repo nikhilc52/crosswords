@@ -10,9 +10,9 @@ function elementIsVisibleInViewport(el) {
 function elementIsFullyHiddenInViewport(el) {
     const { top, left, bottom, right } = el.getBoundingClientRect();
     const { innerHeight, innerWidth } = window;
-    return !((top > 0 && top < innerHeight) ||
+    return !(((top > 0 && top < innerHeight) ||
         (bottom > 0 && bottom < innerHeight)) &&
-        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth)))
 };
 
 // dictionary of image ID's as keys, values are [gif filename, still image filename, 
@@ -34,7 +34,7 @@ const element_dict = {
 
 function check_gifs() {
     for (const key of Object.keys(element_dict)) {
-        const elem  = document.getElementById(key);
+        const elem = document.getElementById(key);
         // if the element is visible and it is showing a still image
         if (elementIsVisibleInViewport(elem) && element_dict[key][2]) {
             // show the GIF, and change the bool to indicate the change

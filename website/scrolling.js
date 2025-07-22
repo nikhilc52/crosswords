@@ -1,8 +1,9 @@
-var scroll_reduction_factor = 5 //20% scroll speed
+var scroll_reduction_factor = 3 //33% scroll speed
 
 function horizontalScrollOnly(e) {
     document.documentElement.scrollLeft += e.deltaY / scroll_reduction_factor; //scroll left if scrolling down
-    document.body.style.overflowX = 'auto' //allow horizontal scroll
+    document.documentElement.scrollLeft += e.deltaX / scroll_reduction_factor;
+    document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
 }
 
@@ -38,11 +39,11 @@ function topRightCorner(e) {
         document.documentElement.scrollTop += e.deltaX / scroll_reduction_factor; //if scrolling right, scroll down
     }
     else if (e.deltaY > 0) {
-        document.body.style.overflowY = 'auto'
+        document.documentElement.scrollTop += e.deltaY / scroll_reduction_factor;
         // if scrolling up, continue
     }
     else if (e.deltaX < 0) {
-        document.body.style.overflowX = 'auto'
+        document.documentElement.scrollLeft += e.deltaX / scroll_reduction_factor;
         // if scrolling right, continue
     }
 }
@@ -57,11 +58,11 @@ function bottomLeftCorner(e) {
         document.documentElement.scrollTop += e.deltaX / scroll_reduction_factor; //if scrolling left, scroll up
     }
     else if (e.deltaY < 0) {
-        document.body.style.overflowY = 'auto'
+        document.documentElement.scrollTop += e.deltaY / scroll_reduction_factor;
         // if scrolling up, continue
     }
     else if (e.deltaX > 0) {
-        document.body.style.overflowX = 'auto'
+        document.documentElement.scrollLeft += e.deltaX / scroll_reduction_factor;
         // if scrolling right, continue
     }
 }
@@ -80,7 +81,7 @@ function bottomRightCorner(e) {
         // if scrolling up, scroll left
     }
     else if (e.deltaX < 0) {
-        document.body.style.overflowX = 'auto'
+        document.documentElement.scrollLeft += e.deltaX / scroll_reduction_factor;
         // if scrolling left, continue
     }
 }
@@ -99,7 +100,7 @@ function topLeftCorner(e) {
         // if scrolling up, scroll down
     }
     else if (e.deltaX > 0) {
-        document.body.style.overflowX = 'auto'
+        document.documentElement.scrollLeft += e.deltaX / scroll_reduction_factor;
         // if scrolling right, continue
     }
 }
@@ -107,7 +108,6 @@ function topLeftCorner(e) {
 document.addEventListener('wheel', (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
-    // event.preventDefault()
     if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
         document.body.style.overflowX = 'auto'
         document.body.style.overflowY = 'auto'
@@ -184,4 +184,4 @@ document.addEventListener('wheel', (event) => {
             document.body.style.overflowY = 'auto'
         }
     }
-});
+}, { passive: false });
