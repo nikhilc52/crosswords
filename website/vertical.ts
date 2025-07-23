@@ -26,12 +26,14 @@ scroll_elements.forEach(function (element) {
 function vertical_check() {
     if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
         white_boxes.forEach(function (element) {
-            element.style.left = 0.5 * window.innerWidth + "px";
+            element.style.left = "50%";
+            element.style.transform = "translate(-50%,0%)";
             element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
         });
 
         black_boxes.forEach(function (element) {
             element.style.left = "50%";
+            element.style.transform = "translate(-50%,0%)";
             if (element.id === "35.0") {
                 element.style.marginBottom = '2vh'
             }
@@ -42,16 +44,32 @@ function vertical_check() {
             element.style.left = "0vh";
             element.style.backgroundColor = "rgb(200,200,200)";
         });
+
+        const spacing_elem = document.getElementById("spacing")
+        spacing_elem!.style.visibility = "hidden"
+        spacing_elem!.style.left = "0vh"
+        spacing_elem!.style.width = "0vh";
+
+        window.scrollTo({
+            // scrollWidth is the total screen size including scrolling
+            // innerWidth is the window size
+            // goes halfway for centering
+            top: 0,
+            left: (document.documentElement.scrollWidth - window.innerWidth) / 2,
+            behavior: "instant"
+        });
     }
     else {
         white_boxes.forEach(function (element) {
             element.style.left = element_style_map.get(element)[0];
             element.style.top = element_style_map.get(element)[1];
+            element.style.transform = "";
         });
 
         black_boxes.forEach(function (element) {
             element.style.left = element_style_map.get(element)[0];
             element.style.top = element_style_map.get(element)[1];
+            element.style.transform = "";
         });
 
         scroll_elements.forEach(function (element) {
@@ -59,13 +77,27 @@ function vertical_check() {
             element.style.top = element_style_map.get(element)[1];
             element.style.backgroundColor = element_style_map.get(element)[2];
         });
-    }
 
-    // document.getElementById('1.0')!.scrollTo({ 'behavior': 'instant' })
+        const spacing_elem = document.getElementById("spacing")
+        spacing_elem!.style.visibility = "visible"
+        spacing_elem!.style.left = "1658vh"
+        spacing_elem!.style.width = "100vh"
+        
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        });
+        document.body.style.overflowX = 'auto' //allow horizontal scroll
+        document.body.style.overflowY = 'hidden' //disallow vertical scroll
+    }
 }
 
-window.onresize = vertical_check
-vertical_check()
+window.onresize = function () {
+    vertical_check();
+    check_highlights();
+    check_minimap();
+}
 
 
 

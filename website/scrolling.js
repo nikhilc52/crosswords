@@ -10,6 +10,7 @@ function horizontalScrollOnly(e) {
 window.onload = function () {
     check_highlights() //moved here to avoid race condition?
     vertical_check()
+    check_minimap()
     document.body.style.overflowX = 'auto' //allow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
 }
@@ -184,4 +185,4 @@ document.addEventListener('wheel', (event) => {
             document.body.style.overflowY = 'auto'
         }
     }
-}, { passive: false });
+})

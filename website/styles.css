@@ -182,6 +182,7 @@ a {
     z-index: -1;
 }
 
+
 .minimap {
     z-index: 3;
     position: fixed;
@@ -198,11 +199,10 @@ a {
     z-index: 1;
     position: fixed;
     bottom: -3.5vh;
-    right: 1vh;
+    right: 2.5vh;
 
     img {
         opacity: 70%;
         height: 33vh;
-        width: 40vh;
     }
 }
