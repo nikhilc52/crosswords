@@ -4,14 +4,7 @@ const snap_scrolling_annotation = document.getElementById('snap-scrolling-annota
 const snap_scrolling_annotation_path = document.getElementById('snap-scrolling-annotation-image-path')
 
 document.getElementById('snap-scrolling').addEventListener('click', (event) => {
-    if (snap_scrolling_disabled) {
-        console.log('enabling')
-        enableSnapScrolling()
-    }
-    else {
-        console.log('disabling')
-        disableSnapScrolling()
-    }
+    snap_scrolling_disabled ? enableSnapScrolling() : disableSnapScrolling()
 });
 
 function enableSnapScrolling() {
@@ -23,9 +16,9 @@ function enableSnapScrolling() {
     document.body.style.overflowX = 'auto' //allow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
     snap_scrolling_disabled = false
-    snap_scrolling_annotation.style.visibility = 'visible'
-    snap_scrolling_element.style.visibility = 'visible'
-    snap_scrolling_annotation_path.style.visibility = 'visible'
+    snap_scrolling_element.style.display = 'block'
+    snap_scrolling_annotation.style.display = 'block'
+    snap_scrolling_annotation_path.style.display = 'block'
     snap_scrolling_element.src = '../illustrator/snap_scroll_disable.svg'
 }
 
@@ -34,4 +27,10 @@ function disableSnapScrolling() {
     document.body.style.overflowY = 'auto' //allow vertical scroll
     snap_scrolling_element.src = '../illustrator/snap_scroll_enable.svg'
     snap_scrolling_disabled = true
+}
+
+function hideSnapScrolling() {
+    snap_scrolling_element.style.display = 'none'
+    snap_scrolling_annotation.style.display = 'none'
+    snap_scrolling_annotation_path.style.display = 'none'
 }

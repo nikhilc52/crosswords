@@ -62,3 +62,4 @@ document.addEventListener('wheel', (event) => {
     check_minimap()
 });
 
+check_minimap()

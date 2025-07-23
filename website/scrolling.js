@@ -1,4 +1,5 @@
 var scroll_reduction_factor = 3 //33% scroll speed
+var prev_width
 
 function horizontalScrollOnly(e) {
     document.documentElement.scrollLeft += e.deltaY / scroll_reduction_factor; //scroll left if scrolling down
@@ -7,7 +8,9 @@ function horizontalScrollOnly(e) {
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
 }
 
+
 window.onload = function () {
+    prev_width = window.innerHeight
     check_highlights()
     vertical_check()
     check_minimap()

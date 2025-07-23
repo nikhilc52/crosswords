@@ -21,13 +21,25 @@ scroll_elements.forEach(function (element) {
 function vertical_check() {
     if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
         white_boxes.forEach(function (element) {
-            element.style.left = "50%";
-            element.style.transform = "translate(-50%,0%)";
+            if (window.innerHeight * 0.9 > window.innerWidth) {
+                element.style.left = "0vh";
+                element.style.transform = "";
+            }
+            else {
+                element.style.left = "50%";
+                element.style.transform = "translate(-50%,0%)";
+            }
             element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
         });
         black_boxes.forEach(function (element) {
-            element.style.left = "50%";
-            element.style.transform = "translate(-50%,0%)";
+            if (window.innerHeight * 0.9 > window.innerWidth) {
+                element.style.left = "0vh";
+                element.style.transform = "";
+            }
+            else {
+                element.style.left = "50%";
+                element.style.transform = "translate(-50%,0%)";
+            }
             if (element.id === "35.0") {
                 element.style.marginBottom = '2vh';
             }
@@ -49,9 +61,7 @@ function vertical_check() {
             left: (document.documentElement.scrollWidth - window.innerWidth) / 2,
             behavior: "instant"
         });
-        snap_scrolling_element.style.visibility = 'hidden';
-        snap_scrolling_annotation.style.visibility = 'hidden';
-        snap_scrolling_annotation_path.style.visibility = 'hidden';
+        hideSnapScrolling();
     }
     else {
         white_boxes.forEach(function (element) {
