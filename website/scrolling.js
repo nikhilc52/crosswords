@@ -8,7 +8,7 @@ function horizontalScrollOnly(e) {
 }
 
 window.onload = function () {
-    check_highlights() //moved here to avoid race condition?
+    check_highlights()
     vertical_check()
     check_minimap()
     document.body.style.overflowX = 'auto' //allow horizontal scroll
@@ -109,7 +109,7 @@ function topLeftCorner(e) {
 document.addEventListener('wheel', (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
-    if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
+    if (snap_scrolling_disabled || !(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
         document.body.style.overflowX = 'auto'
         document.body.style.overflowY = 'auto'
     }

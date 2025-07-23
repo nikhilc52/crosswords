@@ -58,6 +58,9 @@ function vertical_check() {
             left: (document.documentElement.scrollWidth - window.innerWidth) / 2,
             behavior: "instant"
         });
+        snap_scrolling_element!.style.visibility = 'hidden'
+        snap_scrolling_annotation!.style.visibility = 'hidden'
+        snap_scrolling_annotation_path!.style.visibility = 'hidden'
     }
     else {
         white_boxes.forEach(function (element) {
@@ -83,13 +86,7 @@ function vertical_check() {
         spacing_elem!.style.left = "1658vh"
         spacing_elem!.style.width = "100vh"
         
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant"
-        });
-        document.body.style.overflowX = 'auto' //allow horizontal scroll
-        document.body.style.overflowY = 'hidden' //disallow vertical scroll
+        enableSnapScrolling()
     }
 }
 
