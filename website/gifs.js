@@ -50,4 +50,4 @@ function check_gifs() {
     }
 }
 
-['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', check_gifs));
+['wheel','touchmove'].forEach(evt => document.addEventListener(evt, check_gifs));

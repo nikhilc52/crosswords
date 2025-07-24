@@ -20,6 +20,6 @@ function check_highlights() {
 }
 
 
-['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', check_highlights));
+['wheel','touchmove'].forEach(evt => document.addEventListener(evt, check_highlights));
 
 check_highlights()

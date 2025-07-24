@@ -1,4 +1,4 @@
-var scroll_reduction_factor = 6 //33% scroll speed
+var scroll_reduction_factor = 5 //20% scroll speed
 var is_desktop_formatting = window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62)
 
 function horizontalScrollOnly(e) {
@@ -109,7 +109,7 @@ function topLeftCorner(e) {
     }
 }
 // probably can be done more efficiently, oh well...
-['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', (event) => {
+['wheel','touchmove'].forEach(evt => document.addEventListener(evt, (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
     if (snap_scrolling_disabled || !is_desktop_formatting) {

@@ -2,6 +2,7 @@ var white_boxes = document.querySelectorAll("div.white-box");
 var black_boxes = document.querySelectorAll("div.black-box");
 var scroll_elements = document.querySelectorAll("div.scroll");
 var prev_width;
+var prev_formatting_is_desktop = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
 var element_style_map = new Map();
 white_boxes.forEach(function (element) {
     var left = element.style.left + '';
@@ -88,13 +89,14 @@ function vertical_check() {
     }
 }
 window.onresize = function () {
-    is_desktop_formatting = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
     //workaround for iOS scrolling
-    if (Math.abs(prev_width - window.innerWidth) !== 0) {
+    if (Math.abs(prev_width - window.innerWidth) !== 0 && prev_formatting_is_desktop) {
+        is_desktop_formatting = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
         prev_width = window.innerWidth;
         vertical_check();
         check_highlights();
         check_minimap();
+        prev_formatting_is_desktop = is_desktop_formatting;
     }
 };
 document.addEventListener("DOMContentLoaded", function (event) {
