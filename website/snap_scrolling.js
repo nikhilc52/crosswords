@@ -8,6 +8,7 @@ document.getElementById('snap-scrolling').addEventListener('click', (event) => {
 });
 
 function enableSnapScrolling() {
+    console.log('snap scrolling enabled')
     window.scrollTo({
         top: 0,
         left: 0,
@@ -20,6 +21,7 @@ function enableSnapScrolling() {
     snap_scrolling_annotation.style.display = 'block'
     snap_scrolling_annotation_path.style.display = 'block'
     snap_scrolling_element.src = '../illustrator/snap_scroll_disable.svg'
+    check_highlights()
 }
 
 function disableSnapScrolling() {

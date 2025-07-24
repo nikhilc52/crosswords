@@ -36,7 +36,7 @@ function check_gifs() {
     for (const key of Object.keys(element_dict)) {
         const elem = document.getElementById(key);
         // if the element is visible and it is showing a still image
-        if (elementIsVisibleInViewport(elem) && element_dict[key][2]) {
+        if ((is_desktop_formatting ? elementIsVisibleInViewport(elem) : elementIsVerticallyPartlyVisibleInViewport(elem)) && element_dict[key][2]) {
             // show the GIF, and change the bool to indicate the change
             elem.src = '../analysis/images/' + element_dict[key][0]
             element_dict[key][2] = false
@@ -50,6 +50,4 @@ function check_gifs() {
     }
 }
 
-document.addEventListener('wheel', (event) => {
-    check_gifs()
-});
+['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', check_gifs));

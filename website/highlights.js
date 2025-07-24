@@ -3,14 +3,15 @@ const highlight_list = new Map(Array.from(document.getElementsByClassName('highl
 
 function check_highlights() {
     for (const key of highlight_list.keys()) {
-        // if the element is visible and it is not 
-        if (elementIsVisibleInViewport(key) && !(highlight_list.get(key))) {
+        // if the element is visible
+        if ((is_desktop_formatting ? elementIsVisibleInViewport(key) : elementIsVerticallyPartlyVisibleInViewport(key))
+            && !(highlight_list.get(key))) {
             // show the highlight, and change the bool to indicate the change
             key.classList.add('highlight-animation')
             highlight_list.set(key, true)
         }
         // if it is fully hidden
-        else if (elementIsFullyHiddenInViewport(key)) {
+        else if ((is_desktop_formatting ? elementIsFullyHiddenInViewport(key) : !elementIsVerticallyPartlyVisibleInViewport(key))) {
             // change to hidden, indicate the change
             key.classList.remove('highlight-animation')
             highlight_list.set(key, false)
@@ -18,8 +19,7 @@ function check_highlights() {
     }
 }
 
-document.addEventListener('wheel', (e) => {
-    check_highlights()
-});
+
+['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', check_highlights));
 
 check_highlights()

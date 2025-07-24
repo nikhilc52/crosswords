@@ -1,5 +1,5 @@
-var scroll_reduction_factor = 3 //33% scroll speed
-var prev_width
+var scroll_reduction_factor = 6 //33% scroll speed
+var is_desktop_formatting = window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62)
 
 function horizontalScrollOnly(e) {
     document.documentElement.scrollLeft += e.deltaY / scroll_reduction_factor; //scroll left if scrolling down
@@ -10,12 +10,12 @@ function horizontalScrollOnly(e) {
 
 
 window.onload = function () {
-    prev_width = window.innerHeight
     check_highlights()
     vertical_check()
     check_minimap()
     document.body.style.overflowX = 'auto' //allow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
+    console.log('loaded')
 }
 
 function verticalScrollOnly(e) {
@@ -109,10 +109,10 @@ function topLeftCorner(e) {
     }
 }
 // probably can be done more efficiently, oh well...
-document.addEventListener('wheel', (event) => {
+['wheel','touchmove'].forEach(evt => document.addEventListener('wheel', (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
-    if (snap_scrolling_disabled || !(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
+    if (snap_scrolling_disabled || !is_desktop_formatting) {
         document.body.style.overflowX = 'auto'
         document.body.style.overflowY = 'auto'
     }
@@ -188,4 +188,4 @@ document.addEventListener('wheel', (event) => {
             document.body.style.overflowY = 'auto'
         }
     }
-})
+}))

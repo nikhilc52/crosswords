@@ -9,16 +9,24 @@ minimap_annotation_path = document.getElementById("minimap-annotation-path")
 
 // adapted from https://www.30secondsofcode.org/js/s/element-is-visible-in-viewport/
 // if the element is partially visible
-function elementIsPartlyVisibleInViewport(el) {
+function elementIsVerticallyPartlyVisibleInViewport(el) {
     const { top, left, bottom, right } = el.getBoundingClientRect();
     const { innerHeight, innerWidth } = window;
     return ((top > 0 && top < innerHeight) ||
-        (bottom > 0 && bottom < innerHeight)) &&
-        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        (bottom > 0 && bottom < innerHeight))
 };
 
+function elementIsPartlyVisibleInViewport(el) {
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+    const { innerHeight, innerWidth } = window;
+    return (((top > 0 && top < innerHeight) ||
+        (bottom > 0 && bottom < innerHeight)) &&
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth)))
+};
+
+
 function check_minimap() {
-    if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
+    if (!is_desktop_formatting) {
         minimap.style.bottom = "9vh";
         minimap.style.right = "0vh";
         minimap_image.style.height = "80vh";
@@ -52,14 +60,12 @@ function check_minimap() {
 
 function minimap_loop(directory) {
     minimap_elements.forEach(function (element) {
-        if (elementIsPartlyVisibleInViewport(element)) {
+        if (elementIsVerticallyPartlyVisibleInViewport(element)) {
             minimap_image.src = directory + parseInt(element.id) + '.svg'
         }
     });
 }
 
-document.addEventListener('wheel', (event) => {
-    check_minimap()
-});
+['wheel','touchmove'].forEach(evt => document.addEventListener(evt, check_minimap));
 
 check_minimap()

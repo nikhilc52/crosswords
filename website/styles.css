@@ -1,6 +1,7 @@
 html,
 body {
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic', 'franklin-gothic-std','Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
     scrollbar-width: none;
     background-color: rgb(200, 200, 200);
 }

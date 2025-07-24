@@ -1,6 +1,7 @@
 const white_boxes = document.querySelectorAll<HTMLElement>("div.white-box");
 const black_boxes = document.querySelectorAll<HTMLElement>("div.black-box");
 const scroll_elements = document.querySelectorAll<HTMLElement>("div.scroll");
+var prev_width : number;
 
 const element_style_map = new Map()
 
@@ -24,7 +25,7 @@ scroll_elements.forEach(function (element) {
 });
 
 function vertical_check() {
-    if (!(window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62))) {
+    if (!is_desktop_formatting) {
         white_boxes.forEach(function (element) {
             if (window.innerHeight * 0.9 > window.innerWidth) {
                 element.style.left = "0vh";
@@ -101,7 +102,9 @@ function vertical_check() {
 }
 
 window.onresize = function () {
-    if (window.innerWidth != prev_width) {
+    is_desktop_formatting = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
+    //workaround for iOS scrolling
+    if (Math.abs(prev_width - window.innerWidth) !== 0) {
         prev_width = window.innerWidth
         vertical_check();
         check_highlights();
@@ -109,7 +112,11 @@ window.onresize = function () {
     }
 }
 
-
+document.addEventListener("DOMContentLoaded", (event) => {
+    prev_width = window.innerWidth;
+    console.log("DOM fully loaded and parsed");
+    vertical_check();
+});
 
 
 
