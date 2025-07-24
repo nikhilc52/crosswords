@@ -1,4 +1,4 @@
-var scroll_reduction_factor = 5 //20% scroll speed
+var scroll_reduction_factor = 3 //20% scroll speed
 var is_desktop_formatting = window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62)
 
 function horizontalScrollOnly(e) {
