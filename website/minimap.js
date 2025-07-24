@@ -60,12 +60,12 @@ function check_minimap() {
 
 function minimap_loop(directory) {
     minimap_elements.forEach(function (element) {
-        if (elementIsVerticallyPartlyVisibleInViewport(element)) {
+        if (is_desktop_formatting ? elementIsPartlyVisibleInViewport(element) : elementIsVerticallyPartlyVisibleInViewport(element)) {
             minimap_image.src = directory + parseInt(element.id) + '.svg'
         }
     });
 }
 
-['wheel','touchmove'].forEach(evt => document.addEventListener(evt, check_minimap));
+['wheel', 'touchmove'].forEach(evt => document.addEventListener(evt, check_minimap));
 
 check_minimap()
