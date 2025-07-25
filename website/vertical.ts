@@ -3,6 +3,9 @@ const black_boxes = document.querySelectorAll<HTMLElement>("div.black-box");
 const scroll_elements = document.querySelectorAll<HTMLElement>("div.scroll");
 var prev_width: number;
 var prev_formatting_is_desktop = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
+const minimap = document.getElementById("minimap")
+const minimap_annotation = document.getElementById("minimap-annotation")
+const minimap_annotation_path = document.getElementById("minimap-annotation-path")
 
 const element_style_map = new Map()
 
@@ -109,6 +112,10 @@ window.onresize = function () {
         prev_width = window.innerWidth
         vertical_check();
         check_highlights();
+
+        minimap!.style.visibility = 'hidden'
+        minimap_annotation!.style.visibility = 'hidden'
+        minimap_annotation_path!.style.visibility = 'hidden'
         check_minimap();
         prev_formatting_is_desktop = is_desktop_formatting
     }

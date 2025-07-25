@@ -3,6 +3,9 @@ var black_boxes = document.querySelectorAll("div.black-box");
 var scroll_elements = document.querySelectorAll("div.scroll");
 var prev_width;
 var prev_formatting_is_desktop = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
+var minimap = document.getElementById("minimap");
+var minimap_annotation = document.getElementById("minimap-annotation");
+var minimap_annotation_path = document.getElementById("minimap-annotation-path");
 var element_style_map = new Map();
 white_boxes.forEach(function (element) {
     var left = element.style.left + '';
@@ -95,6 +98,9 @@ window.onresize = function () {
         prev_width = window.innerWidth;
         vertical_check();
         check_highlights();
+        minimap.style.visibility = 'hidden';
+        minimap_annotation.style.visibility = 'hidden';
+        minimap_annotation_path.style.visibility = 'hidden';
         check_minimap();
         prev_formatting_is_desktop = is_desktop_formatting;
     }

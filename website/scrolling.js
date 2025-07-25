@@ -11,8 +11,19 @@ function horizontalScrollOnly(e) {
 
 window.onload = function () {
     check_highlights()
-    vertical_check()
     check_minimap()
+    check_gifs()
+
+    minimap.style.visibility = 'visible'
+    minimap_annotation.style.visibility = 'visible'
+    minimap_annotation_path.style.visibility = 'visible'
+    
+    if (is_desktop_formatting) {
+        snap_scrolling_element.style.display = 'block'
+        snap_scrolling_annotation.style.display = 'block'
+        snap_scrolling_annotation_path.style.display = 'block'
+    }
+
     document.body.style.overflowX = 'auto' //allow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
     console.log('loaded')
@@ -109,7 +120,7 @@ function topLeftCorner(e) {
     }
 }
 // probably can be done more efficiently, oh well...
-['wheel','touchmove'].forEach(evt => document.addEventListener(evt, (event) => {
+['wheel', 'touchmove'].forEach(evt => document.addEventListener(evt, (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
     if (snap_scrolling_disabled || !is_desktop_formatting) {

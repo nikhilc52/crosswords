@@ -1,6 +1,6 @@
 html,
 body {
-    font-family: 'Franklin Gothic', 'franklin-gothic-std','Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic', 'franklin-gothic-std', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     scrollbar-width: none;
     background-color: rgb(200, 200, 200);
@@ -189,6 +189,7 @@ a {
     position: fixed;
     bottom: 5vh;
     right: 5vh;
+    visibility: hidden;
 
     img {
         opacity: 100%;
@@ -201,6 +202,7 @@ a {
     position: fixed;
     bottom: -3.5vh;
     right: 2.5vh;
+    visibility: hidden;
 
     img {
         opacity: 70%;
@@ -213,6 +215,7 @@ a {
     position: fixed;
     bottom: -3.5vh;
     right: 2.5vh;
+    visibility: hidden;
 
     img {
         opacity: 100%;
@@ -225,22 +228,24 @@ a {
     position: fixed;
     top: 3.5vh;
     right: 1vh;
-    cursor:pointer;
+    cursor: pointer;
 
     img {
+        display: none;
         opacity: 100%;
-        height: 15vh;
+        height: 10vh;
     }
 }
 
-#snap-scrolling-annotation {
+.snap-scrolling-annotation {
     z-index: 2;
     position: fixed;
     top: 3.5vh;
     right: 1vh;
 
     img {
+        display: none;
         opacity: 70%;
-        height: 15vh;
+        height: 10vh;
     }
 }
