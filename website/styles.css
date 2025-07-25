@@ -10,6 +10,13 @@ body {
     /* border: 1px solid red; */
 }
 
+#loading-screen{
+    position: fixed;
+    bottom: 1vh;
+    left: 2vh;
+    visibility: visible;
+}
+
 .white-box {
     position: absolute;
     top: 2vh;

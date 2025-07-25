@@ -14,6 +14,8 @@ window.onload = function () {
     check_minimap()
     check_gifs()
 
+    document.getElementById('loading-screen').style.visibility = 'hidden'
+
     minimap.style.visibility = 'visible'
     minimap_annotation.style.visibility = 'visible'
     minimap_annotation_path.style.visibility = 'visible'

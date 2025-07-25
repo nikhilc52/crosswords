@@ -48,7 +48,7 @@ function vertical_check() {
             if (element.id === "35.0") {
                 element.style.marginBottom = '2vh';
             }
-            element.style.top = ((parseInt(element.id) - 1) * 90) + "vh";
+            element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
         });
         scroll_elements.forEach(function (element) {
             element.style.left = "0vh";
