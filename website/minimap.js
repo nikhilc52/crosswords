@@ -2,9 +2,9 @@ var minimap_elements = document.querySelectorAll("div.black-box, div.white-box")
 minimap_image = document.getElementById("minimap-image")
 minimap_annotation_image = document.getElementById("minimap-annotation-image")
 minimap_annotation_image_path = document.getElementById("minimap-annotation-image-path")
-// minimap = document.getElementById("minimap")
-// minimap_annotation = document.getElementById("minimap-annotation")
-// minimap_annotation_path = document.getElementById("minimap-annotation-path")
+minimap = document.getElementById("minimap")
+minimap_annotation = document.getElementById("minimap-annotation")
+minimap_annotation_path = document.getElementById("minimap-annotation-path")
 
 
 // adapted from https://www.30secondsofcode.org/js/s/element-is-visible-in-viewport/
