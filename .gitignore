@@ -1,6 +1,2 @@
 /crosswords
-crosswords_clues.csv
-crossword_representations.csv
-reader.ipynb
-writer.ipynb
 analysis/nouns.csv
