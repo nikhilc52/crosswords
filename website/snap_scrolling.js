@@ -8,7 +8,6 @@ document.getElementById('snap-scrolling').addEventListener('click', (event) => {
 });
 
 function enableSnapScrolling() {
-    console.log('snap scrolling enabled')
     window.scrollTo({
         top: 0,
         left: 0,
@@ -16,11 +15,13 @@ function enableSnapScrolling() {
     });
     document.body.style.overflowX = 'auto' //allow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
-    snap_scrolling_disabled = false
-    snap_scrolling_element.style.display = 'block'
-    snap_scrolling_annotation.style.display = 'block'
-    snap_scrolling_annotation_path.style.display = 'block'
     snap_scrolling_element.src = '../illustrator/snap_scroll_disable.svg'
+    snap_scrolling_disabled = false
+    if (is_fully_loaded) {
+        snap_scrolling_element.style.display = 'block'
+        snap_scrolling_annotation.style.display = 'block'
+        snap_scrolling_annotation_path.style.display = 'block'
+    }
     check_highlights()
 }
 

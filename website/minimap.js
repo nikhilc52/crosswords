@@ -27,10 +27,15 @@ function check_minimap() {
         minimap_annotation_path_image.src = '../illustrator/minimap_annotation_mobile_path.svg'
         minimap_image.style.height = "80vh";
 
+        minimap_image.style.bottom = "50%";
+        minimap_image.style.transform = "translate(0%,50%)";
+
         minimap_annotation_image.style.height = "85vh";
         minimap_annotation_path_image.style.height = "85vh";
-        minimap_annotation_image.style.bottom = '5vh';
-        minimap_annotation_path_image.style.bottom = '5vh';
+        minimap_annotation_image.style.bottom = "50%";
+        minimap_annotation_image.style.transform = "translate(0%,50%)";
+        minimap_annotation_path_image.style.bottom = "50%";
+        minimap_annotation_path_image.style.transform = "translate(0%,50%)";
         minimap_annotation_image.style.right = '3.5vh';
         minimap_annotation_path_image.style.right = '3.5vh';
         minimap_loop('../illustrator/minimap_mobile/')

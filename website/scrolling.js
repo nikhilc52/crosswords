@@ -1,5 +1,6 @@
 var scroll_reduction_factor = 3 //33% scroll speed
 var is_desktop_formatting = window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62)
+var is_fully_loaded = false;
 
 function horizontalScrollOnly(e) {
     document.documentElement.scrollLeft += e.deltaY / scroll_reduction_factor; //scroll left if scrolling down
@@ -24,6 +25,7 @@ window.onload = function () {
         snap_scrolling_annotation.style.display = 'block'
         snap_scrolling_annotation_path.style.display = 'block'
     }
+    is_fully_loaded = true;
 }
 
 function verticalScrollOnly(e) {
