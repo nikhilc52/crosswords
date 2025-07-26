@@ -3,19 +3,13 @@ const black_boxes = document.querySelectorAll<HTMLElement>("div.black-box");
 const scroll_elements = document.querySelectorAll<HTMLElement>("div.scroll");
 var prev_width: number;
 var prev_formatting_is_desktop = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
-const minimap = document.getElementById("minimap")
-const minimap_annotation = document.getElementById("minimap-annotation")
-const minimap_annotation_path = document.getElementById("minimap-annotation-path")
 
 const element_style_map = new Map()
 
-white_boxes.forEach(function (element) {
-    const left = element.style.left + '';
-    const top = element.style.top + '';
-    element_style_map.set(element, [left, top]);
-});
+const combined_box_list = (Array.from(white_boxes)).concat(Array.from(black_boxes))
 
-black_boxes.forEach(function (element) {
+// maps to obtain original element styles for resetting
+combined_box_list.forEach(function (element) {
     const left = element.style.left + '';
     const top = element.style.top + '';
     element_style_map.set(element, [left, top]);
@@ -30,7 +24,8 @@ scroll_elements.forEach(function (element) {
 
 function vertical_check() {
     if (!is_desktop_formatting) {
-        white_boxes.forEach(function (element) {
+        combined_box_list.forEach(function (element) {
+            // if the boxes will run off the width of the page, make them the left most edge
             if (window.innerHeight * 0.9 > window.innerWidth) {
                 element.style.left = "0vh";
                 element.style.transform = "";
@@ -40,21 +35,10 @@ function vertical_check() {
                 element.style.transform = "translate(-50%,0%)";
             }
             element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
-        });
 
-        black_boxes.forEach(function (element) {
-            if (window.innerHeight * 0.9 > window.innerWidth) {
-                element.style.left = "0vh";
-                element.style.transform = "";
-            }
-            else {
-                element.style.left = "50%";
-                element.style.transform = "translate(-50%,0%)";
-            }
             if (element.id === "35.0") {
                 element.style.marginBottom = '2vh'
             }
-            element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
         });
 
         scroll_elements.forEach(function (element) {
@@ -62,29 +46,23 @@ function vertical_check() {
             element.style.backgroundColor = "rgb(200,200,200)";
         });
 
+        // spacing element for scrolling, don't need anymore
         const spacing_elem = document.getElementById("spacing")
         spacing_elem!.style.visibility = "hidden"
         spacing_elem!.style.left = "0vh"
         spacing_elem!.style.width = "0vh";
 
         window.scrollTo({
-            // scrollWidth is the total screen size including scrolling
-            // innerWidth is the window size
-            // goes halfway for centering
             top: 0,
             left: (document.documentElement.scrollWidth - window.innerWidth) / 2,
             behavior: "instant"
         });
+        // non-snap scrolling on mobile screens
         hideSnapScrolling()
     }
     else {
-        white_boxes.forEach(function (element) {
-            element.style.left = element_style_map.get(element)[0];
-            element.style.top = element_style_map.get(element)[1];
-            element.style.transform = "";
-        });
-
-        black_boxes.forEach(function (element) {
+        // reset all the positions to their original states
+        combined_box_list.forEach(function (element) {
             element.style.left = element_style_map.get(element)[0];
             element.style.top = element_style_map.get(element)[1];
             element.style.transform = "";
@@ -106,25 +84,20 @@ function vertical_check() {
 }
 
 window.onresize = function () {
-    //workaround for iOS scrolling
+    //workaround for iOS scrolling, only resizes if the width changes and from desktop view
     if (Math.abs(prev_width - window.innerWidth) !== 0 && prev_formatting_is_desktop) {
         is_desktop_formatting = (window.innerWidth > 500) && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62);
         prev_width = window.innerWidth
         vertical_check();
         check_highlights();
-
-        minimap!.style.visibility = 'hidden'
-        minimap_annotation!.style.visibility = 'hidden'
-        minimap_annotation_path!.style.visibility = 'hidden'
+        
         check_minimap();
         prev_formatting_is_desktop = is_desktop_formatting
     }
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
     prev_width = window.innerWidth;
-
-    console.log("DOM fully loaded and parsed");
     vertical_check();
 });
 

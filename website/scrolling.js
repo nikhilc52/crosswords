@@ -1,4 +1,4 @@
-var scroll_reduction_factor = 3 //20% scroll speed
+var scroll_reduction_factor = 3 //33% scroll speed
 var is_desktop_formatting = window.innerWidth > 500 && (window.innerWidth / window.innerHeight < 3.33) && (window.innerWidth / window.innerHeight > 1.62)
 
 function horizontalScrollOnly(e) {
@@ -8,7 +8,6 @@ function horizontalScrollOnly(e) {
     document.body.style.overflowY = 'hidden' //disallow vertical scroll
 }
 
-
 window.onload = function () {
     check_highlights()
     check_minimap()
@@ -16,19 +15,15 @@ window.onload = function () {
 
     document.getElementById('loading-screen').style.visibility = 'hidden'
 
-    minimap.style.visibility = 'visible'
-    minimap_annotation.style.visibility = 'visible'
-    minimap_annotation_path.style.visibility = 'visible'
+    minimap_image.style.visibility = 'visible'
+    minimap_annotation_image.style.visibility = 'visible'
+    minimap_annotation_path_image.style.visibility = 'visible'
     
     if (is_desktop_formatting) {
         snap_scrolling_element.style.display = 'block'
         snap_scrolling_annotation.style.display = 'block'
         snap_scrolling_annotation_path.style.display = 'block'
     }
-
-    document.body.style.overflowX = 'auto' //allow horizontal scroll
-    document.body.style.overflowY = 'hidden' //disallow vertical scroll
-    console.log('loaded')
 }
 
 function verticalScrollOnly(e) {
@@ -121,7 +116,17 @@ function topLeftCorner(e) {
         // if scrolling right, continue
     }
 }
-// probably can be done more efficiently, oh well...
+
+function anyElementIsVisibleInViewport (listOfElements) {
+    for (elem_id in listOfElements){
+        if (elementIsVisibleInViewport(document.getElementById(elem_id))) {
+            return true
+        }
+    }
+    return false
+} 
+
+// probably can be done more efficiently, oh well, I really hate javascript
 ['wheel', 'touchmove'].forEach(evt => document.addEventListener(evt, (event) => {
     document.body.style.overflowX = 'hidden' //disallow horizontal scroll
     document.body.style.overflowY = 'hidden' //disallow vertical scroll

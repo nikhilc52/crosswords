@@ -10,11 +10,12 @@ body {
     /* border: 1px solid red; */
 }
 
-#loading-screen{
+#loading-screen {
     position: fixed;
     bottom: 1vh;
     left: 2vh;
     visibility: visible;
+    z-index: 10;
 }
 
 .white-box {
@@ -190,45 +191,40 @@ a {
     z-index: -1;
 }
 
-
-#minimap {
+#minimap-annotation-image {
     z-index: 4;
     position: fixed;
-    bottom: 5vh;
-    right: 5vh;
+    bottom: 0vh;
+    right: 2vh;
     visibility: hidden;
-
-    img {
-        opacity: 100%;
-        height: 15vh;
-    }
+    opacity: 70%;
+    height: 25vh;
+    visibility: visible;
 }
 
-#minimap-annotation {
-    z-index: 2;
-    position: fixed;
-    bottom: -3.5vh;
-    right: 2.5vh;
-    visibility: hidden;
-
-    img {
-        opacity: 70%;
-        height: 33vh;
-    }
-}
-
-#minimap-annotation-path {
+#minimap-annotation-path-image {
     z-index: 4;
     position: fixed;
-    bottom: -3.5vh;
-    right: 2.5vh;
+    bottom: 0vh;
+    right: 2vh;
     visibility: hidden;
-
-    img {
-        opacity: 100%;
-        height: 33vh;
-    }
+    opacity: 100%;
+    height: 25vh;
+    visibility: visible;
 }
+
+#minimap-image {
+    z-index: 4;
+    position: fixed;
+    bottom: 7vh;
+    right: 4vh;
+    visibility: hidden;
+    opacity: 100%;
+    height: 11vh;
+    visibility: visible;
+}
+
+
 
 #snap-scrolling {
     z-index: 4;

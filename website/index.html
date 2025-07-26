@@ -565,15 +565,9 @@
         </div>
     </div>
 
-    <div id="minimap-annotation">
-        <img id="minimap-annotation-image" src="../illustrator/minimap_annotation.svg">
-    </div>
-    <div id="minimap-annotation-path">
-        <img id="minimap-annotation-image-path" src="../illustrator/minimap_annotation_path.svg">
-    </div>
-    <div id="minimap">
-        <img id="minimap-image" src="../illustrator/minimap/1.svg">
-    </div>
+    <img id="minimap-annotation-image" src="../illustrator/minimap_annotation.svg">
+    <img id="minimap-annotation-path-image" src="../illustrator/minimap_annotation_path.svg">
+    <img id="minimap-image" src="../illustrator/minimap/1.svg">
 
     <div class="snap-scrolling-annotation">
         <img id="snap-scrolling-annotation-image" src="../illustrator/snap_scroll_annotation.svg">
@@ -587,10 +581,10 @@
     </div>
 
     <!-- placeholder box for spacing -->
-    <div style="background-color: rgb(200, 200, 200); position: absolute; left: 1658vh; top:740vh; height: 2vh; width: 100vw; 
-    border: none;" id="spacing"></div>
+    <div style=" background-color: rgb(200, 200, 200); position: absolute; left: 1658vh; top:740vh; height: 2vh; width:
+        100vw; border: none;" id="spacing"></div>
 
-    <!-- temp object for scrolling aid -->
+    <!-- object for scrolling aid. names are bad, but whatever, theres not a better alt idt -->
     <div id="0" class="scroll" style="top: 0vh; left:  25vh;"></div>
     <div id="1" class="scroll" style="top: 0vh; left:  125vh;"></div>
     <div id="2" class="scroll" style="top: 0vh; left: 280vh;"></div>
@@ -635,8 +629,8 @@
 </body>
 
 <script>
-    console.log('scrolling checked')
     if (is_desktop_formatting) {
+        console.log('here1')
         document.body.style.overflowX = 'auto' //allow horizontal scroll
         document.body.style.overflowY = 'hidden' //disallow vertical scroll
     }
