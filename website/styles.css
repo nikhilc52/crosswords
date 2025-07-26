@@ -199,7 +199,7 @@ a {
     visibility: hidden;
     opacity: 70%;
     height: 25vh;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #minimap-annotation-path-image {
@@ -210,7 +210,7 @@ a {
     visibility: hidden;
     opacity: 100%;
     height: 25vh;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #minimap-image {
@@ -221,7 +221,7 @@ a {
     visibility: hidden;
     opacity: 100%;
     height: 11vh;
-    visibility: visible;
+    visibility: hidden;
 }
 
 
