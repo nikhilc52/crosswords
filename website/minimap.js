@@ -54,7 +54,7 @@ function check_minimap() {
 function minimap_loop(directory) {
     minimap_elements.forEach(function (element) {
         if (is_desktop_formatting ? elementIsPartlyVisibleInViewport(element) : elementIsVerticallyPartlyVisibleInViewport(element)) {
-            minimap_image.src = directory + parseInt(element.id) + '.svg'
+            minimap_image.src = directory + parseInt(element.id.substring(4)) + '.svg'
         }
     });
 }

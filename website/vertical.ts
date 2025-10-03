@@ -34,9 +34,9 @@ function vertical_check() {
                 element.style.left = "50%";
                 element.style.transform = "translate(-50%,0%)";
             }
-            element.style.top = ((parseInt(element.id) - 1) * 90) + 2 + "vh";
+            element.style.top = ((parseInt(element.id.substring(4)) - 1) * 90) + 2 + "vh";
 
-            if (element.id === "35.0") {
+            if (element.id === "box-35") {
                 element.style.marginBottom = '2vh'
             }
         });
