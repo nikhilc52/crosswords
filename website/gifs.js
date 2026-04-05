@@ -19,17 +19,17 @@ function elementIsFullyHiddenInViewport(el) {
 // boolean value to see if the image is currently showing a still image]
 // playing a GIF once is done with photoshop settings
 const element_dict = {
-    "unique-pie-chart": ["percent_unique_pie_e.gif", "percent_unique_pie_e1.png", true],
-    "heatmap-animation": ["heatmap_animation_e.gif", "heatmap_animation_e1.png", true],
-    "common-answers-bar": ["common_answers_e.gif", "answer_barplot_e.png", true],
-    "common-answers-pie": ["frequency_by_day.gif", "frequency_by_day.png", true],
-    "ttr-line": ["ttr_year_e.gif", "ttr_year.png", true],
-    "clue-pair": ["clue_frequency_pair.gif", "clue_frequency_pair.png", true],
-    "clue-length-img": ["clue_length_e.gif", "clue_length_e.png", true],
-    "bracket-answer": ["brackets_answer_frequency_e.gif", "brackets_answer_frequency_e.png", true],
-    "quote-answer": ["quote_answer_frequency_e.gif", "quote_answer_frequency_e.png", true],
-    "adele": ["adele_e.gif", "adele_e2.png", true],
-    "serena": ["serena.gif", "serena_e1.png", true]
+    "unique-pie-chart": ["percent_unique_pie_e.webp", "percent_unique_pie_e1.webp", true],
+    "heatmap-animation": ["heatmap_animation_e.webp", "heatmap_animation_e1.webp", true],
+    "common-answers-bar": ["common_answers_e.webp", "answer_barplot_e.webp", true],
+    "common-answers-pie": ["frequency_by_day.webp", "frequency_by_day_1.webp", true],
+    "ttr-line": ["ttr_year_e.webp", "ttr_year.webp", true],
+    "clue-pair": ["clue_frequency_pair.webp", "clue_frequency_pair_1.webp", true],
+    "clue-length-img": ["clue_length_e.webp", "clue_length_e1.webp", true],
+    "bracket-answer": ["brackets_answer_frequency_e.webp", "brackets_answer_frequency_e1.webp", true],
+    "quote-answer": ["quote_answer_frequency_e.webp", "quote_answer_frequency_e1.webp", true],
+    "adele": ["adele_e.webp", "adele_e2.webp", true],
+    "serena": ["serena.webp", "serena_e1.webp", true]
 }
 
 function check_gifs() {
